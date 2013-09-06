@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="xxCactBankAM"
+   ComponentClass="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankAMImpl" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_deployType" Value="0" />
+   </DesignTime>
+   <ViewUsage
+      Name="xxCactBankCreateVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankCreateVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxCactBankCityVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.poplist.server.xxCactBankCityVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxCactBankBranchVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.poplist.server.xxCactBankBranchVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxCactBankAnnIncomeVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankAnnIncomeVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxCactBankLatestTxn"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankLatestTxn" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxCactBankDetVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankDetVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxCactBankLoginVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankLoginVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxCactAttachmentVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactAttachmentVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxCactBankOccTypeVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankOccTypeVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxCactBankAccTypeVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankAccTypeVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxCactBankDocTypeVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankDocTypeVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxCactBankCountriesVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.lov.server.xxCactBankCountriesVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxCactBankStatesVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.lov.server.xxCactBankStatesVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxcactTxnTestVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxcactTxnTestVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="XxcactTransactionVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.XxcactTransactionVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxcactTxnTypeVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.poplist.server.xxcactTxnTypeVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxcactbanktxntestBalanceVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxcactbanktxntestBalanceVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxcactBankValiVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxcactBankValiVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxcactbankBankVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxcactbankBankVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxcactBanktxnTestMyTVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxcactBanktxnTestMyTVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxcactTxnTestVO1"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxcactTxnTestVO1" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxcactTxnTestVO2"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxcactTxnTestVO2" >
+   </ViewUsage>
+</AppModule>

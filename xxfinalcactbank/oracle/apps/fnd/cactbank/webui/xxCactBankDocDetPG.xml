@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_1312" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="region1" amDefName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankAM" windowTitle="Document Details" title="Upload Your Documents" controllerClass="xxfinalcactbank.oracle.apps.fnd.cactbank.webui.xxCactBankDocDetCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/image003.png"/>
+         </ui:corporateBranding>
+         <ui:location>
+            <oa:train id="TrainDemoRN" extends="/xxcactbank/oracle/apps/fnd/cactbank/webui/TrainRN"/>
+         </ui:location>
+         <ui:contents>
+            <oa:header id="region2" text="Upload Documents">
+               <ui:contents>
+                  <oa:tableLayout id="region3" hAlign="center">
+                     <ui:contents>
+                        <oa:rowLayout id="Row1">
+                           <ui:contents>
+                              <oa:cellFormat id="Cell1">
+                                 <ui:contents>
+                                    <oa:messageChoice id="DocType" prompt="Document Name" viewName="xxCactBankCreateVO" viewAttr="DocName" pickListViewName="xxCactBankDocTypeVO" pickListDispAttr="DocumentType" pickListValAttr="DocumentType"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                        <oa:rowLayout id="Row2">
+                           <ui:contents>
+                              <oa:cellFormat id="Cell2">
+                                 <ui:contents>
+                                    <oa:messageFileUpload id="item2" prompt="File Upload"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                        <oa:rowLayout id="Row3">
+                           <ui:contents>
+                              <oa:cellFormat id="Cell3" columnSpan="2" hAlign="center">
+                                 <ui:contents>
+                                    <oa:submitButton id="Apply" text="Apply" prompt="Apply"/>
+                                    <oa:submitButton id="Cancel" text="Cancel" prompt="Cancel" hAlign="start"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                     </ui:contents>
+                  </oa:tableLayout>
+               </ui:contents>
+            </oa:header>
+            <oa:pageButtonBar id="PageButtonBar" extends="/xxcactbank/oracle/apps/fnd/cactbank/webui/TrainFooterRN"/>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

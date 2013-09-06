@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="xxcactTxnTestVO2"
+   SelectList="xxcactTxnTestEO.SNO, 
+       xxcactTxnTestEO.TRANSACTION_TYPE, 
+       xxcactTxnTestEO.TRANSACTION_ID, 
+       xxcactTxnTestEO.ACC_NO, 
+       xxcactTxnTestEO.TRANSFER_ACC_NO, 
+       xxcactTxnTestEO.AMOUNT_FROM_ACC, 
+       xxcactTxnTestEO.CREDIT, 
+       xxcactTxnTestEO.DEBIT, 
+       xxcactTxnTestEO.BALANCE, 
+       xxcactTxnTestEO.ATTRIBUTE1, 
+       xxcactTxnTestEO.ATTRIBUTE2, 
+       xxcactTxnTestEO.ATTRIBUTE3, 
+       xxcactTxnTestEO.ATTRIBUTE4, 
+       xxcactTxnTestEO.ATTRIBUTE5, 
+       xxcactTxnTestEO.ATTRIBUTE6, 
+       xxcactTxnTestEO.ATTRIBUTE7, 
+       xxcactTxnTestEO.ATTRIBUTE8, 
+       xxcactTxnTestEO.ATTRIBUTE9, 
+       xxcactTxnTestEO.ATTRIBUTE10, 
+       xxcactTxnTestEO.LAST_UPDATE_DATE, 
+       xxcactTxnTestEO.LAST_UPDATED_BY, 
+       xxcactTxnTestEO.CREATION_DATE, 
+       xxcactTxnTestEO.CREATED_BY, 
+       xxcactTxnTestEO.LAST_UPDATE_LOGIN, 
+       xxcactTxnTestEO.ROWID"
+   FromList="TXN_TEST xxcactTxnTestEO"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   RowClass="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxcactTxnTestVO2RowImpl"
+   ComponentClass="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxcactTxnTestVO2Impl"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="xxcactTxnTestEO"
+      Entity="xxfinalcactbank.oracle.apps.fnd.cactbank.schema.server.xxcactTxnTestEO" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Sno"
+      EntityAttrName="Sno"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="SNO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionType"
+      EntityAttrName="TransactionType"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="TRANSACTION_TYPE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionId"
+      EntityAttrName="TransactionId"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="TRANSACTION_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="AccNo"
+      EntityAttrName="AccNo"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="ACC_NO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransferAccNo"
+      EntityAttrName="TransferAccNo"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="TRANSFER_ACC_NO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="AmountFromAcc"
+      EntityAttrName="AmountFromAcc"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="AMOUNT_FROM_ACC" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Credit"
+      EntityAttrName="Credit"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="CREDIT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Debit"
+      EntityAttrName="Debit"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="DEBIT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Balance"
+      EntityAttrName="Balance"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="BALANCE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute1"
+      EntityAttrName="Attribute1"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="ATTRIBUTE1" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute2"
+      EntityAttrName="Attribute2"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="ATTRIBUTE2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute3"
+      EntityAttrName="Attribute3"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="ATTRIBUTE3" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute4"
+      EntityAttrName="Attribute4"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="ATTRIBUTE4" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute5"
+      EntityAttrName="Attribute5"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="ATTRIBUTE5" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute6"
+      EntityAttrName="Attribute6"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="ATTRIBUTE6" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute7"
+      EntityAttrName="Attribute7"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="ATTRIBUTE7" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute8"
+      EntityAttrName="Attribute8"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="ATTRIBUTE8" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute9"
+      EntityAttrName="Attribute9"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="ATTRIBUTE9" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute10"
+      EntityAttrName="Attribute10"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="ATTRIBUTE10" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdateDate"
+      EntityAttrName="LastUpdateDate"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="LAST_UPDATE_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdatedBy"
+      EntityAttrName="LastUpdatedBy"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="LAST_UPDATED_BY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreationDate"
+      EntityAttrName="CreationDate"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="CREATION_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreatedBy"
+      EntityAttrName="CreatedBy"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="CREATED_BY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdateLogin"
+      EntityAttrName="LastUpdateLogin"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="LAST_UPDATE_LOGIN" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RowID"
+      IsUpdateable="false"
+      EntityAttrName="RowID"
+      EntityUsage="xxcactTxnTestEO"
+      AliasName="ROWID" >
+   </ViewAttribute>
+</ViewObject>

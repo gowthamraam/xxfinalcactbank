@@ -1,0 +1,363 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="xxCactBankCreateVO"
+   SelectList="xxCactBankCreateEO.USER_ID, 
+       xxCactBankCreateEO.PASSWORD, 
+       xxCactBankCreateEO.FIRST_NAME, 
+       xxCactBankCreateEO.MIDDLE_NAME, 
+       xxCactBankCreateEO.LAST_NAME, 
+       xxCactBankCreateEO.MOBILE_NO, 
+       xxCactBankCreateEO.EMAIL_ID, 
+       xxCactBankCreateEO.REF_NAME, 
+       xxCactBankCreateEO.DOB, 
+       xxCactBankCreateEO.GENDER, 
+       xxCactBankCreateEO.PAN, 
+       xxCactBankCreateEO.MARITAL, 
+       xxCactBankCreateEO.ANNUAL_INCOME, 
+       xxCactBankCreateEO.OCCUPATION, 
+       xxCactBankCreateEO.RES_ADDRESS1, 
+       xxCactBankCreateEO.RES_ADDRESS2, 
+       xxCactBankCreateEO.RES_CITY, 
+       xxCactBankCreateEO.RES_DISTRICT, 
+       xxCactBankCreateEO.RES_STATE, 
+       xxCactBankCreateEO.RES_COUNTRY, 
+       xxCactBankCreateEO.RES_PINCODE, 
+       xxCactBankCreateEO.PER_ADDRESS1, 
+       xxCactBankCreateEO.PER_ADDRESS2, 
+       xxCactBankCreateEO.PER_CITY, 
+       xxCactBankCreateEO.PER_DISTRICT, 
+       xxCactBankCreateEO.PER_STATE, 
+       xxCactBankCreateEO.PER_COUNTRY, 
+       xxCactBankCreateEO.PER_PINCODE, 
+       xxCactBankCreateEO.ACC_TYPE, 
+       xxCactBankCreateEO.PREF_CITY, 
+       xxCactBankCreateEO.BRANCH, 
+       xxCactBankCreateEO.DOC_NAME, 
+       xxCactBankCreateEO.APPL_DATE"
+   FromList="XXCACT_CUSTOMER xxCactBankCreateEO"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   RowClass="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankCreateVORowImpl"
+   ComponentClass="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankCreateVOImpl"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="xxCactBankCreateEO"
+      Entity="xxfinalcactbank.oracle.apps.fnd.cactbank.schema.server.xxCactBankCreateEO" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="UserId"
+      EntityAttrName="UserId"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="USER_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Password"
+      EntityAttrName="Password"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PASSWORD" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="FirstName"
+      EntityAttrName="FirstName"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="FIRST_NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="MiddleName"
+      EntityAttrName="MiddleName"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="MIDDLE_NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastName"
+      EntityAttrName="LastName"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="LAST_NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="MobileNo"
+      EntityAttrName="MobileNo"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="MOBILE_NO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="EmailId"
+      EntityAttrName="EmailId"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="EMAIL_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RefName"
+      EntityAttrName="RefName"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="REF_NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Dob"
+      EntityAttrName="Dob"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="DOB" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Gender"
+      EntityAttrName="Gender"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="GENDER" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Pan"
+      EntityAttrName="Pan"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PAN" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Marital"
+      EntityAttrName="Marital"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="MARITAL" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="AnnualIncome"
+      EntityAttrName="AnnualIncome"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="ANNUAL_INCOME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Occupation"
+      EntityAttrName="Occupation"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="OCCUPATION" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ResAddress1"
+      EntityAttrName="ResAddress1"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="RES_ADDRESS1" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ResAddress2"
+      EntityAttrName="ResAddress2"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="RES_ADDRESS2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ResCity"
+      EntityAttrName="ResCity"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="RES_CITY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ResDistrict"
+      EntityAttrName="ResDistrict"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="RES_DISTRICT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ResState"
+      EntityAttrName="ResState"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="RES_STATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ResCountry"
+      EntityAttrName="ResCountry"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="RES_COUNTRY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ResPincode"
+      EntityAttrName="ResPincode"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="RES_PINCODE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PerAddress1"
+      EntityAttrName="PerAddress1"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PER_ADDRESS1" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PerAddress2"
+      EntityAttrName="PerAddress2"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PER_ADDRESS2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PerCity"
+      EntityAttrName="PerCity"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PER_CITY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PerDistrict"
+      EntityAttrName="PerDistrict"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PER_DISTRICT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PerState"
+      EntityAttrName="PerState"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PER_STATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PerCountry"
+      EntityAttrName="PerCountry"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PER_COUNTRY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PerPincode"
+      EntityAttrName="PerPincode"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PER_PINCODE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="AccType"
+      EntityAttrName="AccType"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="ACC_TYPE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PrefCity"
+      EntityAttrName="PrefCity"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PREF_CITY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Branch"
+      EntityAttrName="Branch"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="BRANCH" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DocName"
+      EntityAttrName="DocName"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="DOC_NAME" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ApplDate"
+      EntityAttrName="ApplDate"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="APPL_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="managed"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="address1"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="address2"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="city"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="district"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="country"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="pincode"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="state"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="peradd"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="peradd1"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="peraddrn"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="peraddrn1"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+</ViewObject>

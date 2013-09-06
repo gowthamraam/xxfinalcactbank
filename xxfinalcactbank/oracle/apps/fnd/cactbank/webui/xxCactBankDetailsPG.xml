@@ -1,0 +1,69 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_1312" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="PageLayoutRN" amDefName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankAM" windowTitle="Details Page" title="Details Page" controllerClass="xxfinalcactbank.oracle.apps.fnd.cactbank.webui.xxCactBankDetailsCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/image003.png"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:header id="region1">
+               <ui:contents>
+                  <oa:messageComponentLayout id="xxCactBankDetVO">
+                     <ui:contents>
+                        <oa:messageStyledText id="CustId" viewName="xxCactBankDetVO" viewAttr="UserId" prompt="User Id" styleClass="OraDataText"/>
+                        <oa:messageStyledText id="AccountHolderName" dataType="VARCHAR2" prompt="Account Holder Name" viewName="xxCactBankDetVO" viewAttr="AccountHolderName" maximumLength="93" styleClass="OraDataText"/>
+                        <oa:messageStyledText id="AccNo" dataType="NUMBER" prompt="Account Number" viewName="xxCactBankDetVO" viewAttr="AccNo" styleClass="OraDataText"/>
+                        <oa:messageStyledText id="Branch" prompt="Branch" viewName="xxCactBankDetVO" viewAttr="Branch" styleClass="OraDataText"/>
+                        <oa:messageStyledText id="EmailId" dataType="VARCHAR2" prompt="Email Address" viewName="xxCactBankDetVO" viewAttr="EmailId" maximumLength="30" styleClass="OraDataText"/>
+                        <oa:messageStyledText id="MobileNo" dataType="NUMBER" prompt="Mobile Number" viewName="xxCactBankDetVO" viewAttr="MobileNo" styleClass="OraDataText"/>
+                        <oa:messageStyledText id="Balance" dataType="NUMBER" prompt="Account Balance" viewName="xxcactbanktxntestBalanceVO" viewAttr="Balance" styleClass="OraDataText"/>
+                     </ui:contents>
+                  </oa:messageComponentLayout>
+               </ui:contents>
+            </oa:header>
+            <oa:subTabLayout id="region2">
+               <ui:contents>
+                  <oa:header id="region4" text="Latest Transactions">
+                     <ui:contents>
+                        <oa:table id="xxcactTxnTestVO" width="100%">
+                           <ui:contents>
+                              <oa:messageStyledText id="Sno" dataType="NUMBER" prompt="Sno" viewName="xxcactTxnTestVO" viewAttr="Sno"/>
+                              <oa:messageStyledText id="CreationDate" dataType="DATE" prompt="CreationDate" viewName="xxcactTxnTestVO" viewAttr="CreationDate"/>
+                              <oa:messageStyledText id="TransactionId" viewName="xxcactTxnTestVO" viewAttr="TransactionId" prompt="Transaction Number"/>
+                              <oa:messageStyledText id="TransferAccNo2" dataType="NUMBER" prompt="Transfered Account Number" viewName="xxcactTxnTestVO" viewAttr="TransferAccNo"/>
+                              <oa:messageStyledText id="AmountFromAcc" dataType="NUMBER" prompt="Account received From" viewName="xxcactTxnTestVO" viewAttr="AmountFromAcc"/>
+                              <oa:messageStyledText id="Credit1" dataType="NUMBER" prompt="Credit" viewName="xxcactTxnTestVO" viewAttr="Credit"/>
+                              <oa:messageStyledText id="Debit1" dataType="NUMBER" prompt="Debit" viewName="xxcactTxnTestVO" viewAttr="Debit"/>
+                              <oa:messageStyledText id="Balance2" dataType="NUMBER" prompt="Balance" viewName="xxcactTxnTestVO" viewAttr="Balance"/>
+                           </ui:contents>
+                        </oa:table>
+                     </ui:contents>
+                  </oa:header>
+                  <oa:defaultSingleColumn id="xxcactTxnTestVOdet" text="Money Transaction">
+                     <ui:contents>
+                        <oa:messageStyledText id="AccNo2" dataType="NUMBER" prompt="Account Number" viewName="xxcactTxnTestVO1" viewAttr="AccNo" styleClass="OraDataText"/>
+                        <oa:messageTextInput id="TransferAccNo3" dataType="NUMBER" prompt="Transfer Account Number" viewName="xxcactTxnTestVO1" viewAttr="TransferAccNo" required="no">
+                           <ui:primaryClientAction>
+                              <ui:firePartialAction event="accountvalidate"/>
+                           </ui:primaryClientAction>
+                        </oa:messageTextInput>
+                        <oa:messageTextInput id="Debit2" dataType="NUMBER" prompt="Amount" viewName="xxcactTxnTestVO1" viewAttr="Debit" required="no">
+                           <ui:primaryClientAction>
+                              <ui:firePartialAction event="amountValidate"/>
+                           </ui:primaryClientAction>
+                        </oa:messageTextInput>
+                        <oa:messageStyledText id="Balance3" dataType="NUMBER" prompt="Balance" viewName="xxcactTxnTestVO1" viewAttr="Balance" styleClass="OraDataText"/>
+                        <oa:submitButton id="Submit" text="Submit" prompt="Submit">
+                           <ui:primaryClientAction>
+                              <ui:firePartialAction event="submit"/>
+                           </ui:primaryClientAction>
+                        </oa:submitButton>
+                        <oa:submitButton id="Cancel" text="Cancel" prompt="Cancel"/>
+                     </ui:contents>
+                  </oa:defaultSingleColumn>
+               </ui:contents>
+            </oa:subTabLayout>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_1312" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="PageLayoutRN" amDefName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankAM" windowTitle="Login Page" title="User Login" controllerClass="xxfinalcactbank.oracle.apps.fnd.cactbank.webui.xxCactBankLoginCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/image003.png"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:tableLayout id="region21" hAlign="center">
+               <ui:contents>
+                  <oa:rowLayout id="region31">
+                     <ui:contents>
+                        <oa:cellFormat id="region81">
+                           <ui:contents>
+                              <oa:image id="item324" imageHeight="295" imageWidth="750" source="/OA_MEDIA/background11.jpg"/>
+                           </ui:contents>
+                        </oa:cellFormat>
+                        <oa:cellFormat id="region91" hAlign="right">
+                           <ui:contents>
+                              <oa:image id="item327" source="/OA_MEDIA/image003.png" imageWidth="70"/>
+                              <oa:spacer id="item328" height="100"/>
+                              <oa:messageComponentLayout id="region71">
+                                 <ui:contents>
+                                    <oa:messageTextInput id="UserId" prompt="User Id" columns="35" showRequired="true"/>
+                                 </ui:contents>
+                              </oa:messageComponentLayout>
+                              <oa:spacer id="item32" height="10"/>
+                              <oa:messageComponentLayout id="region92">
+                                 <ui:contents>
+                                    <oa:messageTextInput id="Password" prompt="Password" columns="35" secret="true" showRequired="true"/>
+                                    <oa:messageStyledText id="item325" rows="20"/>
+                                    <oa:messageStyledText id="item326"/>
+                                    <oa:messageLayout id="messageLayout1">
+                                       <ui:contents>
+                                          <oa:submitButton id="Submit" text="Login" prompt="Login" serverUnvalidated="true" unvalidated="true">
+                                             <ui:primaryClientAction>
+                                                <ui:fireAction event="submit">
+                                                   <ui:parameters>
+                                                      <ui:parameter key="UserId" value="${oa.xxCactBankLoginVO.UserId}"/>
+                                                   </ui:parameters>
+                                                </ui:fireAction>
+                                             </ui:primaryClientAction>
+                                          </oa:submitButton>
+                                          <oa:spacer id="item329" height="20"/>
+                                          <oa:submitButton id="CreateAccount" prompt="Create Account">
+                                             <ui:primaryClientAction>
+                                                <ui:fireAction event="createaccount"/>
+                                             </ui:primaryClientAction>
+                                          </oa:submitButton>
+                                       </ui:contents>
+                                    </oa:messageLayout>
+                                 </ui:contents>
+                              </oa:messageComponentLayout>
+                           </ui:contents>
+                        </oa:cellFormat>
+                     </ui:contents>
+                  </oa:rowLayout>
+               </ui:contents>
+            </oa:tableLayout>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

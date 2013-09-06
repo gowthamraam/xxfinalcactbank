@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oa:listOfValues version="10.1.3_1312" xml:lang="en-US" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:ui="http://xmlns.oracle.com/uix/ui" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$" scope="/" amDefName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankAM">
+   <ui:contents>
+      <oa:table name="xxCactBankStatesRN" id="xxCactBankStatesVO">
+         <ui:contents>
+            <oa:messageStyledText id="Country2Id" dataType="NUMBER" prompt="Country2Id" viewName="xxCactBankStatesVO" viewAttr="Country2Id"/>
+            <oa:messageStyledText id="State2Id" dataType="VARCHAR2" prompt="State2Id" viewName="xxCactBankStatesVO" viewAttr="State2Id" maximumLength="50" queryable="true"/>
+         </ui:contents>
+      </oa:table>
+   </ui:contents>
+</oa:listOfValues>

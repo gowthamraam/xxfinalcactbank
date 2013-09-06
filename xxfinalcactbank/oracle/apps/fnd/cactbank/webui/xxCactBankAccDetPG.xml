@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_1312" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="region1" amDefName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankAM" windowTitle="Account Details" title="Account Details" controllerClass="xxfinalcactbank.oracle.apps.fnd.cactbank.webui.xxCactBankAccDetCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/image003.png"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:header id="region2" text="Account Details">
+               <ui:contents>
+                  <oa:messageComponentLayout id="MainRN">
+                     <ui:contents>
+                        <oa:messageStyledText id="ApplicationDate" prompt="Application Date" dataType="DATE" viewName="xxCactBankCreateVO" viewAttr="ApplDate"/>
+                        <oa:messageChoice id="AccType" dataType="VARCHAR2" prompt="Type of Account" viewName="xxCactBankCreateVO" viewAttr="AccType" pickListViewName="xxCactBankAccTypeVO" sortByViewAttr="AccountType" pickListDispAttr="AccountType" pickListValAttr="AccountType" defaultValue="initial value"/>
+                        <oa:messageChoice id="PrefCity" dataType="VARCHAR2" prompt="Preferred City" viewName="xxCactBankCreateVO" viewAttr="PrefCity" pickListViewName="xxCactBankCityVO" pickListDispAttr="CityName" pickListValAttr="Lname" pickListViewDef="">
+                           <ui:primaryClientAction>
+                              <ui:firePartialAction/>
+                           </ui:primaryClientAction>
+                        </oa:messageChoice>
+                        <oa:messageChoice id="Branch" dataType="VARCHAR2" prompt="Branch" viewName="xxCactBankCreateVO" viewAttr="Branch" pickListViewDef="" pickListViewName="xxCactBankBranchVO" pickListDispAttr="BranchName" pickListValAttr="Lname"/>
+                     </ui:contents>
+                  </oa:messageComponentLayout>
+               </ui:contents>
+            </oa:header>
+            <oa:pageButtonBar id="PageButtonBar" extends="/xxcactbank/oracle/apps/fnd/cactbank/webui/TrainFooterRN"/>
+         </ui:contents>
+         <ui:location>
+            <oa:train id="TrainDemoRN" extends="/xxcactbank/oracle/apps/fnd/cactbank/webui/TrainRN"/>
+         </ui:location>
+      </oa:pageLayout>
+   </content>
+</page>

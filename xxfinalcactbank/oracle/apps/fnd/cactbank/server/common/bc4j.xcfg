@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="xxCactBankAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>vistest</JDBCName>
+         <jbo.project>xxCactBank</jbo.project>
+         <AppModuleJndiName>xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankAM</ApplicationName>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <ConnectionDefinition name="4iapps">
+      <ENTRY name="JDBC_PORT" value="1524"/>
+      <ENTRY name="ConnectionType" value="JDBC"/>
+      <ENTRY name="HOSTNAME" value="172.16.1.250"/>
+      <ENTRY name="user" value="apps"/>
+      <ENTRY name="ConnectionName" value="4iapps"/>
+      <ENTRY name="SID" value="VISTEST"/>
+      <ENTRY name="JdbcDriver" value="oracle.jdbc.OracleDriver"/>
+      <ENTRY name="password">
+         <![CDATA[{904}05F9D3AAF29666292234D1B047752E3C5B]]>
+      </ENTRY>
+      <ENTRY name="ORACLE_JDBC_TYPE" value="thin"/>
+      <ENTRY name="DeployPassword" value="true"/>
+   </ConnectionDefinition>
+</BC4JConfig>

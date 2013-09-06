@@ -1,0 +1,302 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_1312" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="PageLayoutRN" amDefName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankAM" windowTitle="Account Creation" title="Account Creation" controllerClass="xxfinalcactbank.oracle.apps.fnd.cactbank.webui.xxCactBankCustDetCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:header id="PerDetails" text="Personal Details">
+               <ui:contents>
+                  <oa:tableLayout id="region6" hAlign="center">
+                     <ui:contents>
+                        <oa:rowLayout id="Row1">
+                           <ui:contents>
+                              <oa:cellFormat id="region8">
+                                 <ui:contents>
+                                    <oa:defaultDoubleColumn id="region543" headerDisabled="true">
+                                       <ui:contents>
+                                          <oa:messageStyledText id="UserId" dataType="VARCHAR2" prompt="User Id" viewName="xxCactBankCreateVO" viewAttr="UserId" maximumLength="30" styleClass="OraDataText"/>
+                                          <oa:messageTextInput id="FirstName" dataType="VARCHAR2" prompt="First Name" viewName="xxCactBankCreateVO" viewAttr="FirstName" maximumLength="30" required="yes"/>
+                                          <oa:messageTextInput id="MiddleName" dataType="VARCHAR2" prompt="Middle Name" viewName="xxCactBankCreateVO" viewAttr="MiddleName" maximumLength="30"/>
+                                          <oa:messageTextInput id="LastName" dataType="VARCHAR2" prompt="Last Name" viewName="xxCactBankCreateVO" viewAttr="LastName" maximumLength="30" required="yes"/>
+                                          <oa:messageTextInput id="MobileNo" dataType="NUMBER" prompt="Mobile Number" viewName="xxCactBankCreateVO" viewAttr="MobileNo" required="yes"/>
+                                          <oa:messageTextInput id="EmailId" dataType="VARCHAR2" prompt="Email Id" viewName="xxCactBankCreateVO" viewAttr="EmailId" maximumLength="30" required="yes"/>
+                                          <oa:messageTextInput id="RefName" dataType="VARCHAR2" prompt="Father Name" viewName="xxCactBankCreateVO" viewAttr="RefName" maximumLength="30" required="yes"/>
+                                          <oa:messageTextInput id="Dob" dataType="DATE" prompt="DOB" viewName="xxCactBankCreateVO" viewAttr="Dob" serverUnvalidated="true" required="yes">
+                                             <ui:primaryClientAction>
+                                                <ui:fireAction unvalidated="true" event="date"/>
+                                             </ui:primaryClientAction>
+                                          </oa:messageTextInput>
+                                          <oa:messageChoice id="AnnualIncome" dataType="VARCHAR2" prompt="Annual Income" viewName="xxCactBankCreateVO" viewAttr="AnnualIncome" pickListViewName="xxCactBankAnnIncomeVO" pickListDispAttr="AnnualIncome" pickListValAttr="AnnualIncome" required="yes"/>
+                                          <oa:messageChoice id="Occupation" dataType="VARCHAR2" prompt="Occupation Type" viewName="xxCactBankCreateVO" viewAttr="Occupation" pickListViewName="xxCactBankOccTypeVO" pickListDispAttr="OccupationType" pickListValAttr="OccupationType" required="yes"/>
+                                          <oa:formValue id="Password" viewName="xxCactBankCreateVO" viewAttr="Password"/>
+                                       </ui:contents>
+                                    </oa:defaultDoubleColumn>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                     </ui:contents>
+                  </oa:tableLayout>
+                  <oa:tableLayout id="region61" hAlign="center">
+                     <ui:contents>
+                        <oa:rowLayout id="Row51">
+                           <ui:contents>
+                              <oa:cellFormat id="region191">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="Gender1" prompt="Gender" required="yes"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="region271">
+                                 <ui:contents>
+                                    <oa:messageRadioButton id="Male" prompt="Male" viewName="xxCactBankCreateVO" viewAttr="Gender" checkedValue="MALE"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="region281">
+                                 <ui:contents>
+                                    <oa:messageRadioButton id="Female" prompt="Female" viewName="xxCactBankCreateVO" viewAttr="Gender" checkedValue="FEMALE"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                        <oa:rowLayout id="Row61">
+                           <ui:contents>
+                              <oa:cellFormat id="region201">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="PANAvailable1" prompt="PAN Available" required="yes"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="region291">
+                                 <ui:contents>
+                                    <oa:messageRadioButton id="Yes" prompt="Yes" serverUnvalidated="true" checkedValue="YES">
+                                       <ui:primaryClientAction>
+                                          <ui:firePartialAction unvalidated="true" event="pan"/>
+                                       </ui:primaryClientAction>
+                                    </oa:messageRadioButton>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="region211">
+                                 <ui:contents>
+                                    <oa:messageRadioButton id="No" prompt="No" checkedValue="NO" serverUnvalidated="true">
+                                       <ui:primaryClientAction>
+                                          <ui:firePartialAction unvalidated="true" event="pan1"/>
+                                       </ui:primaryClientAction>
+                                    </oa:messageRadioButton>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="region5324"/>
+                           </ui:contents>
+                        </oa:rowLayout>
+                        <oa:rowLayout id="region5322">
+                           <ui:contents>
+                              <oa:cellFormat id="region5323">
+                                 <ui:contents>
+                                    <oa:messageTextInput id="Pan1" dataType="VARCHAR2" prompt="PAN" viewName="xxCactBankCreateVO" viewAttr="Pan" maximumLength="30" rendered="${oa.xxCactBankCreateVO.managed}" required="yes"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                        <oa:rowLayout id="Row71">
+                           <ui:contents>
+                              <oa:cellFormat id="region241">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="Marital1" dataType="VARCHAR2" prompt="Marital Status" maximumLength="1" required="yes"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="region311">
+                                 <ui:contents>
+                                    <oa:messageRadioButton id="Married" prompt="Married" checkedValue="Y" viewName="xxCactBankCreateVO" viewAttr="Marital"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="region321">
+                                 <ui:contents>
+                                    <oa:messageRadioButton id="Single" prompt="Single" checkedValue="N" viewName="xxCactBankCreateVO" viewAttr="Marital"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="region251"/>
+                           </ui:contents>
+                        </oa:rowLayout>
+                     </ui:contents>
+                  </oa:tableLayout>
+               </ui:contents>
+            </oa:header>
+            <oa:header id="ResAddress" text="Residential Address">
+               <ui:contents>
+                  <oa:tableLayout id="region331" hAlign="center">
+                     <ui:contents>
+                        <oa:rowLayout id="Row91">
+                           <ui:contents>
+                              <oa:cellFormat id="region341">
+                                 <ui:contents>
+                                    <oa:defaultDoubleColumn id="region542" headerDisabled="true">
+                                       <ui:contents>
+                                          <oa:messageTextInput id="ResAddress1" dataType="VARCHAR2" prompt="Flat No/ Name" viewName="xxCactBankCreateVO" viewAttr="ResAddress1" maximumLength="30" required="yes"/>
+                                          <oa:messageTextInput id="ResAddress21" dataType="VARCHAR2" prompt="Address Line 2" viewName="xxCactBankCreateVO" viewAttr="ResAddress2" maximumLength="30" required="yes"/>
+                                          <oa:messageTextInput id="ResCity1" dataType="VARCHAR2" prompt="City" viewName="xxCactBankCreateVO" viewAttr="ResCity" maximumLength="30" required="yes"/>
+                                          <oa:messageTextInput id="ResDistrict1" dataType="VARCHAR2" prompt="District" viewName="xxCactBankCreateVO" viewAttr="ResDistrict" maximumLength="30" required="yes"/>
+                                          <oa:messageLovInput id="ResCountry1" dataType="VARCHAR2" prompt="Country" viewName="xxCactBankCreateVO" viewAttr="ResCountry" maximumLength="30" externalListOfValues="/xxfinalcactbank/oracle/apps/fnd/cactbank/lov/webui/xxCactBankCountriesRN" queryable="true" required="yes">
+                                             <lovMappings>
+                                                <lovMap id="lovMap1" lovItem="CountryNames" resultTo="ResCountry1" criteriaFrom="ResCountry1"/>
+                                                <lovMap id="lovMap2" lovItem="CountryId" resultTo="CountrySearch"/>
+                                             </lovMappings>
+                                          </oa:messageLovInput>
+                                          <oa:messageLovInput id="ResState1" dataType="VARCHAR2" prompt="State" viewName="xxCactBankCreateVO" viewAttr="ResState" maximumLength="30" externalListOfValues="/xxfinalcactbank/oracle/apps/fnd/cactbank/lov/webui/xxCactBankStatesRN" queryable="true" required="yes">
+                                             <lovMappings>
+                                                <lovMap id="lovMap3" lovItem="State2Id" resultTo="ResState1" criteriaFrom="ResState1" programmaticQuery="true"/>
+                                                <lovMap id="lovMap4" lovItem="Country2Id" criteriaFrom="CountrySearch" requiredForLOV="true"/>
+                                             </lovMappings>
+                                          </oa:messageLovInput>
+                                          <oa:messageTextInput id="ResPincode1" dataType="NUMBER" prompt="Zip/Pin code" viewName="xxCactBankCreateVO" viewAttr="ResPincode" maximumLength="10" required="yes"/>
+                                       </ui:contents>
+                                    </oa:defaultDoubleColumn>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="region351">
+                                 <ui:contents>
+                                    <oa:formValue id="CountrySearch" dataType="NUMBER"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                     </ui:contents>
+                  </oa:tableLayout>
+                  <oa:tableLayout id="region3311" hAlign="center">
+                     <ui:contents>
+                        <oa:rowLayout id="Row1311">
+                           <ui:contents>
+                              <oa:cellFormat id="region4211">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="CopyMessage" prompt="Is Permanent Address Same as Mailing Address?" required="yes"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="region4311">
+                                 <ui:contents>
+                                    <oa:messageRadioButton id="Copy" prompt="Yes" checkedValue="COPY" serverUnvalidated="true">
+                                       <ui:primaryClientAction>
+                                          <ui:fireAction event="copy" unvalidated="true" id="fireAction1"/>
+                                       </ui:primaryClientAction>
+                                    </oa:messageRadioButton>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="region4411">
+                                 <ui:contents>
+                                    <oa:messageRadioButton id="NoCopy" prompt="No" serverUnvalidated="true" checkedValue="NoCopy">
+                                       <ui:primaryClientAction>
+                                          <ui:firePartialAction event="NoCopy" unvalidated="true" id="firePartialAction2"/>
+                                       </ui:primaryClientAction>
+                                    </oa:messageRadioButton>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                     </ui:contents>
+                  </oa:tableLayout>
+               </ui:contents>
+            </oa:header>
+            <oa:header id="PerAddress" text="Permanent Address" rendered="${oa.xxCactBankCreateVO.peraddrn}">
+               <ui:contents>
+                  <oa:tableLayout id="region451" hAlign="center" rendered="true">
+                     <ui:contents>
+                        <oa:rowLayout id="Row141">
+                           <ui:contents>
+                              <oa:cellFormat id="region461">
+                                 <ui:contents>
+                                    <oa:defaultDoubleColumn id="region532" rendered="true" headerDisabled="true">
+                                       <ui:contents>
+                                          <oa:messageStyledText id="PerAddress11" dataType="VARCHAR2" prompt="Flat No/ Name" viewName="xxCactBankCreateVO" viewAttr="PerAddress1" maximumLength="30" rendered="${oa.xxCactBankCreateVO.address1}" styleClass="OraDataText"/>
+                                          <oa:messageStyledText id="PerAddress21" dataType="VARCHAR2" prompt="Address Line 2" viewName="xxCactBankCreateVO" viewAttr="PerAddress2" maximumLength="30" rendered="${oa.xxCactBankCreateVO.address2}" styleClass="OraDataText"/>
+                                          <oa:messageStyledText id="PerCity1" dataType="VARCHAR2" prompt="City" viewName="xxCactBankCreateVO" viewAttr="PerCity" maximumLength="30" rendered="${oa.xxCactBankCreateVO.city}" sortByViewAttr="OraDataText" styleClass="OraDataText"/>
+                                          <oa:messageStyledText id="PerDistrict1" dataType="VARCHAR2" prompt="District" viewName="xxCactBankCreateVO" viewAttr="PerDistrict" maximumLength="30" rendered="${oa.xxCactBankCreateVO.district}" styleClass="OraDataText"/>
+                                          <oa:messageStyledText id="PerState1" dataType="VARCHAR2" prompt="State" viewName="xxCactBankCreateVO" viewAttr="PerState" maximumLength="30" rendered="${oa.xxCactBankCreateVO.state}" styleClass="OraDataText"/>
+                                          <oa:messageStyledText id="PerCountry1" dataType="VARCHAR2" prompt="Country" viewName="xxCactBankCreateVO" viewAttr="PerCountry" maximumLength="30" rendered="${oa.xxCactBankCreateVO.country}" styleClass="OraDataText"/>
+                                          <oa:messageStyledText id="PerPincode1" dataType="NUMBER" prompt="Zip/Pin code" viewName="xxCactBankCreateVO" viewAttr="PerPincode" maximumLength="10" rendered="${oa.xxCactBankCreateVO.pincode}" styleClass="OraDataText"/>
+                                       </ui:contents>
+                                    </oa:defaultDoubleColumn>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                     </ui:contents>
+                  </oa:tableLayout>
+               </ui:contents>
+            </oa:header>
+            <oa:header id="PPRPerAddress" text="Permanent Address" rendered="${oa.xxCactBankCreateVO.peraddrn1}">
+               <ui:contents>
+                  <oa:tableLayout id="region4511" hAlign="center" rendered="true">
+                     <ui:contents>
+                        <oa:rowLayout id="Row1411">
+                           <ui:contents>
+                              <oa:cellFormat id="region4611">
+                                 <ui:contents>
+                                    <oa:defaultDoubleColumn id="region5321" rendered="true" headerDisabled="true">
+                                       <ui:contents>
+                                          <oa:messageTextInput id="PerAddress111" dataType="VARCHAR2" prompt="Flat No/ Name" viewName="xxCactBankCreateVO" viewAttr="PerAddress1" maximumLength="30" rendered="${oa.xxCactBankCreateVO.address1}" required="yes"/>
+                                          <oa:messageTextInput id="PerAddress211" dataType="VARCHAR2" prompt="Address Line 2" viewName="xxCactBankCreateVO" viewAttr="PerAddress2" maximumLength="30" rendered="${oa.xxCactBankCreateVO.address2}" required="yes"/>
+                                          <oa:messageTextInput id="PerCity11" dataType="VARCHAR2" prompt="City" viewName="xxCactBankCreateVO" viewAttr="PerCity" maximumLength="30" rendered="${oa.xxCactBankCreateVO.city}" required="yes"/>
+                                          <oa:messageTextInput id="PerDistrict11" dataType="VARCHAR2" prompt="District" viewName="xxCactBankCreateVO" viewAttr="PerDistrict" maximumLength="30" rendered="${oa.xxCactBankCreateVO.district}" required="yes"/>
+                                          <oa:messageTextInput id="PerState11" dataType="VARCHAR2" prompt="State" viewName="xxCactBankCreateVO" viewAttr="PerState" maximumLength="30" rendered="${oa.xxCactBankCreateVO.state}" required="yes"/>
+                                          <oa:messageTextInput id="PerCountry11" dataType="VARCHAR2" prompt="Country" viewName="xxCactBankCreateVO" viewAttr="PerCountry" maximumLength="30" rendered="${oa.xxCactBankCreateVO.country}" required="yes"/>
+                                          <oa:messageTextInput id="PerPincode11" dataType="NUMBER" prompt="Zip/Pin code" viewName="xxCactBankCreateVO" viewAttr="PerPincode" maximumLength="10" rendered="${oa.xxCactBankCreateVO.pincode}" required="yes"/>
+                                       </ui:contents>
+                                    </oa:defaultDoubleColumn>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                     </ui:contents>
+                  </oa:tableLayout>
+               </ui:contents>
+            </oa:header>
+            <oa:header id="AccHeader" text="Account Details">
+               <ui:contents>
+                  <oa:messageComponentLayout id="MainRN">
+                     <ui:contents>
+                        <oa:messageStyledText id="ApplicationDate" prompt="Application Date" dataType="DATE" viewName="xxCactBankCreateVO" viewAttr="ApplDate" styleClass="OraDataText"/>
+                        <oa:messageChoice id="AccType" dataType="VARCHAR2" prompt="Type of Account" viewName="xxCactBankCreateVO" viewAttr="AccType" pickListViewName="xxCactBankAccTypeVO" pickListDispAttr="AccountType" pickListValAttr="AccountType" defaultValue="" required="yes" allowBlankValue="true"/>
+                        <oa:messageChoice id="PrefCity" dataType="VARCHAR2" prompt="Preferred City" viewName="xxCactBankCreateVO" viewAttr="PrefCity" pickListViewName="xxCactBankCityVO" pickListDispAttr="CityName" pickListValAttr="Lname" pickListViewDef="" serverUnvalidated="true" required="yes">
+                           <ui:primaryClientAction>
+                              <ui:fireAction unvalidated="true"/>
+                           </ui:primaryClientAction>
+                        </oa:messageChoice>
+                        <oa:messageChoice id="Branch" dataType="VARCHAR2" prompt="Branch" viewName="xxCactBankCreateVO" viewAttr="Branch" pickListViewDef="" pickListViewName="xxCactBankBranchVO" pickListDispAttr="BranchName" pickListValAttr="Lname" required="yes"/>
+                     </ui:contents>
+                  </oa:messageComponentLayout>
+               </ui:contents>
+            </oa:header>
+            <oa:header id="DocHeader" text="Upload Documents">
+               <ui:contents>
+                  <oa:tableLayout id="region3" hAlign="center">
+                     <ui:contents>
+                        <oa:rowLayout id="Row1412">
+                           <ui:contents>
+                              <oa:cellFormat id="Cell1">
+                                 <ui:contents>
+                                    <oa:messageChoice id="DocType" prompt="Document Name" viewName="xxCactBankCreateVO" viewAttr="DocName" pickListViewName="xxCactBankDocTypeVO" pickListDispAttr="DocumentType" pickListValAttr="DocumentType" allowBlankValue="true" defaultValue="" sortState="ascending" required="yes"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                        <oa:rowLayout id="Row2">
+                           <ui:contents>
+                              <oa:cellFormat id="Cell2">
+                                 <ui:contents>
+                                    <oa:messageFileUpload id="FileUpload" prompt="File Upload" required="yes"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                     </ui:contents>
+                  </oa:tableLayout>
+               </ui:contents>
+            </oa:header>
+            <oa:pageButtonBar id="region5325">
+               <ui:contents>
+                  <oa:submitButton id="Apply" text="Apply" prompt="Apply"/>
+                  <oa:submitButton id="Cancel" text="Cancel" prompt="Cancel" serverUnvalidated="true" unvalidated="true"/>
+               </ui:contents>
+            </oa:pageButtonBar>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

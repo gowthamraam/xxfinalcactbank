@@ -1,0 +1,772 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="xxCactBankCreateEO"
+   DBObjectType="table"
+   DBObjectName="XXCACT_CUSTOMER"
+   AliasName="xxCactBankCreateEO"
+   BindingStyle="OracleName"
+   UseGlueCode="false"
+   RowClass="xxfinalcactbank.oracle.apps.fnd.cactbank.schema.server.xxCactBankCreateEOImpl"
+   DefClass="oracle.apps.fnd.framework.server.OAEntityDefImpl"
+   CollClass="xxfinalcactbank.oracle.apps.fnd.cactbank.schema.server.xxCactBankCreateEOCollImpl"
+   MsgBundleClass="xxfinalcactbank.oracle.apps.fnd.cactbank.schema.server.common.xxCactBankCreateEOImplMsgBundle" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_codeGenFlag2" Value="Init|Delete|Access|Coll|Val|Msg" />
+   </DesignTime>
+   <Attribute
+      Name="UserId"
+      Precision="30"
+      ColumnName="USER_ID"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Password"
+      Precision="30"
+      ColumnName="PASSWORD"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="FirstName"
+      Precision="30"
+      ColumnName="FIRST_NAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="FirstName_Rule_0"
+         OnAttribute="FirstName"
+         Pattern="^[a-z]*[a-z]+$"
+         Flags="CaseInsensitive"
+         Inverse="false" >
+      </RegExpValidationBean>
+   </Attribute>
+   <Attribute
+      Name="MiddleName"
+      Precision="30"
+      ColumnName="MIDDLE_NAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="MiddleName_Rule_0"
+         OnAttribute="MiddleName"
+         Pattern="^[a-z]*[a-z]+$"
+         Flags="CaseInsensitive"
+         Inverse="false" >
+      </RegExpValidationBean>
+   </Attribute>
+   <Attribute
+      Name="LastName"
+      Precision="30"
+      ColumnName="LAST_NAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="LastName_Rule_0"
+         OnAttribute="LastName"
+         Pattern="^[a-z]*[a-z]+$"
+         Flags="CaseInsensitive"
+         Inverse="false" >
+      </RegExpValidationBean>
+   </Attribute>
+   <Attribute
+      Name="MobileNo"
+      ColumnName="MOBILE_NO"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="MobileNo_Rule_0"
+         OnAttribute="MobileNo"
+         Pattern="^[0-9]*[0-9]+$"
+         Inverse="false" >
+      </RegExpValidationBean>
+      <LengthValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="MobileNo_Rule_1"
+         OnAttribute="MobileNo"
+         CompareType="EQUALTO"
+         DataType="CHARACTER"
+         CompareLength="10"
+         Inverse="false" >
+      </LengthValidationBean>
+   </Attribute>
+   <Attribute
+      Name="EmailId"
+      Precision="30"
+      ColumnName="EMAIL_ID"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="EmailId_Rule_2"
+         OnAttribute="EmailId"
+         Pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$"
+         Flags="CaseInsensitive"
+         Inverse="false" >
+      </RegExpValidationBean>
+   </Attribute>
+   <Attribute
+      Name="RefName"
+      Precision="30"
+      ColumnName="REF_NAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="RefName_Rule_0"
+         OnAttribute="RefName"
+         Pattern="[a-zA-Z\s]*"
+         Inverse="false" >
+      </RegExpValidationBean>
+   </Attribute>
+   <Attribute
+      Name="Dob"
+      ColumnName="DOB"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      SQLType="DATE"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Gender"
+      Precision="10"
+      ColumnName="GENDER"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="10" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Pan"
+      Precision="30"
+      ColumnName="PAN"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="Pan_Rule_0"
+         OnAttribute="Pan"
+         Pattern="^[A-Z]*[0-9]*[A-Z]+$"
+         Inverse="false" >
+      </RegExpValidationBean>
+      <LengthValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="Pan_Rule_1"
+         OnAttribute="Pan"
+         CompareType="EQUALTO"
+         DataType="CHARACTER"
+         CompareLength="10"
+         Inverse="false" >
+      </LengthValidationBean>
+   </Attribute>
+   <Attribute
+      Name="Marital"
+      Precision="1"
+      ColumnName="MARITAL"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="1" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="AnnualIncome"
+      Precision="30"
+      ColumnName="ANNUAL_INCOME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Occupation"
+      Precision="30"
+      ColumnName="OCCUPATION"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ResAddress1"
+      Precision="30"
+      ColumnName="RES_ADDRESS1"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ResAddress2"
+      Precision="30"
+      ColumnName="RES_ADDRESS2"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="ResAddress2_Rule_0"
+         OnAttribute="ResAddress2"
+         Pattern="[a-zA-Z\s]*"
+         Inverse="false" >
+      </RegExpValidationBean>
+   </Attribute>
+   <Attribute
+      Name="ResCity"
+      Precision="30"
+      ColumnName="RES_CITY"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="ResCity_Rule_0"
+         OnAttribute="ResCity"
+         Pattern="[a-zA-Z\s]*"
+         Inverse="false" >
+      </RegExpValidationBean>
+   </Attribute>
+   <Attribute
+      Name="ResDistrict"
+      Precision="30"
+      ColumnName="RES_DISTRICT"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="ResDistrict_Rule_0"
+         OnAttribute="ResDistrict"
+         Pattern="[a-zA-Z\s]*"
+         Inverse="false" >
+      </RegExpValidationBean>
+   </Attribute>
+   <Attribute
+      Name="ResState"
+      Precision="30"
+      ColumnName="RES_STATE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="ResState_Rule_0"
+         OnAttribute="ResState"
+         Pattern="[a-zA-Z\s]*"
+         Inverse="false" >
+      </RegExpValidationBean>
+   </Attribute>
+   <Attribute
+      Name="ResCountry"
+      Precision="30"
+      ColumnName="RES_COUNTRY"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="ResCountry_Rule_0"
+         OnAttribute="ResCountry"
+         Pattern="[a-zA-Z\s]*"
+         Inverse="false" >
+      </RegExpValidationBean>
+   </Attribute>
+   <Attribute
+      Name="ResPincode"
+      ColumnName="RES_PINCODE"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="ResPincode_Rule_0"
+         OnAttribute="ResPincode"
+         Pattern="^[0-9]*[0-9]+$"
+         Inverse="false" >
+      </RegExpValidationBean>
+      <LengthValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="ResPincode_Rule_1"
+         OnAttribute="ResPincode"
+         CompareType="EQUALTO"
+         DataType="CHARACTER"
+         CompareLength="6"
+         Inverse="false" >
+      </LengthValidationBean>
+   </Attribute>
+   <Attribute
+      Name="PerAddress1"
+      Precision="30"
+      ColumnName="PER_ADDRESS1"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="PerAddress2"
+      Precision="30"
+      ColumnName="PER_ADDRESS2"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="PerAddress2_Rule_0"
+         OnAttribute="PerAddress2"
+         Pattern="[a-zA-Z\s]*"
+         Inverse="false" >
+      </RegExpValidationBean>
+   </Attribute>
+   <Attribute
+      Name="PerCity"
+      Precision="30"
+      ColumnName="PER_CITY"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="PerCity_Rule_0"
+         OnAttribute="PerCity"
+         Pattern="[a-zA-Z\s]*"
+         Inverse="false" >
+      </RegExpValidationBean>
+   </Attribute>
+   <Attribute
+      Name="PerDistrict"
+      Precision="30"
+      ColumnName="PER_DISTRICT"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="PerDistrict_Rule_0"
+         OnAttribute="PerDistrict"
+         Pattern="[a-zA-Z\s]*"
+         Inverse="false" >
+      </RegExpValidationBean>
+   </Attribute>
+   <Attribute
+      Name="PerState"
+      Precision="30"
+      ColumnName="PER_STATE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="PerState_Rule_0"
+         OnAttribute="PerState"
+         Pattern="[a-zA-Z\s]*"
+         Inverse="false" >
+      </RegExpValidationBean>
+   </Attribute>
+   <Attribute
+      Name="PerCountry"
+      Precision="30"
+      ColumnName="PER_COUNTRY"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="PerCountry_Rule_0"
+         OnAttribute="PerCountry"
+         Pattern="[a-zA-Z\s]*"
+         Inverse="false" >
+      </RegExpValidationBean>
+   </Attribute>
+   <Attribute
+      Name="PerPincode"
+      ColumnName="PER_PINCODE"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+      <RegExpValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="PerPincode_Rule_0"
+         OnAttribute="PerPincode"
+         Pattern="^[0-9]*[0-9]+$"
+         Inverse="false" >
+      </RegExpValidationBean>
+      <LengthValidationBean
+         xmlns="http://xmlns.oracle.com/adfm/validation"
+         ResId="PerPincode_Rule_1"
+         OnAttribute="PerPincode"
+         CompareType="EQUALTO"
+         DataType="CHARACTER"
+         CompareLength="6"
+         Inverse="false" >
+      </LengthValidationBean>
+   </Attribute>
+   <Attribute
+      Name="AccType"
+      Precision="10"
+      ColumnName="ACC_TYPE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="10" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="PrefCity"
+      Precision="30"
+      ColumnName="PREF_CITY"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Branch"
+      Precision="30"
+      ColumnName="BRANCH"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="DocName"
+      Precision="30"
+      ColumnName="DOC_NAME"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute1"
+      Precision="150"
+      ColumnName="ATTRIBUTE1"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="150" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute2"
+      Precision="150"
+      ColumnName="ATTRIBUTE2"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="150" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute3"
+      Precision="150"
+      ColumnName="ATTRIBUTE3"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="150" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute4"
+      Precision="150"
+      ColumnName="ATTRIBUTE4"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="150" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute5"
+      Precision="150"
+      ColumnName="ATTRIBUTE5"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="150" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute6"
+      Precision="150"
+      ColumnName="ATTRIBUTE6"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="150" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute7"
+      Precision="150"
+      ColumnName="ATTRIBUTE7"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="150" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute8"
+      Precision="150"
+      ColumnName="ATTRIBUTE8"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="150" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute9"
+      Precision="150"
+      ColumnName="ATTRIBUTE9"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="150" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute10"
+      Precision="150"
+      ColumnName="ATTRIBUTE10"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="150" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="LastUpdateDate"
+      ColumnName="LAST_UPDATE_DATE"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      SQLType="DATE"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="LastUpdatedBy"
+      ColumnName="LAST_UPDATED_BY"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="CreationDate"
+      ColumnName="CREATION_DATE"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      SQLType="DATE"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="CreatedBy"
+      ColumnName="CREATED_BY"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="LastUpdateLogin"
+      ColumnName="LAST_UPDATE_LOGIN"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ApplDate"
+      ColumnName="APPL_DATE"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      SQLType="DATE"
+      TableName="XXCACT_CUSTOMER" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Key
+      Name="XxcactbankcreateeoPrimaryKey" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxfinalcactbank.oracle.apps.fnd.cactbank.schema.server.xxCactBankCreateEO.UserId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isPrimary" Value="true" />
+         <Attr Name="_DBObjectName" Value="XXCACTBANKCREATEEO_PRIMARY_KEY" />
+      </DesignTime>
+   </Key>
+</Entity>

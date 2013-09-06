@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="server"
+   SeparateXMLFiles="true"
+   PackageName="xxfinalcactbank.oracle.apps.fnd.cactbank.poplist.server" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+   </DesignTime>
+   <Containee
+      Name="xxCactBankBranchVO"
+      FullName="xxfinalcactbank.oracle.apps.fnd.cactbank.poplist.server.xxCactBankBranchVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="xxCactBankCityVO"
+      FullName="xxfinalcactbank.oracle.apps.fnd.cactbank.poplist.server.xxCactBankCityVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="xxcactTxnTypeVO"
+      FullName="xxfinalcactbank.oracle.apps.fnd.cactbank.poplist.server.xxcactTxnTypeVO"
+      ObjectType="ViewObject" >
+   </Containee>
+</JboPackage>

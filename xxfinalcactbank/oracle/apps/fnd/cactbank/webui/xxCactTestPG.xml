@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_1312" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="region1" amDefName="xxcactbank.oracle.apps.fnd.cactbank.server.xxCactBankAM" windowTitle="Just Check" title="Just My Page" controllerClass="xxcactbank.oracle.apps.fnd.cactbank.webui.xxCactTestCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:messageComponentLayout id="xxCactBankDetVO">
+               <ui:contents>
+                  <oa:messageStyledText id="AccNo" dataType="NUMBER" prompt="AccNo" viewName="xxCactBankDetVO" viewAttr="AccNo"/>
+                  <oa:messageStyledText id="AccountHolderName" dataType="VARCHAR2" prompt="AccountHolderName" viewName="xxCactBankDetVO" viewAttr="AccountHolderName" maximumLength="93"/>
+                  <oa:messageStyledText id="Branch" dataType="VARCHAR2" prompt="Branch" viewName="xxCactBankDetVO" viewAttr="Branch" maximumLength="30"/>
+                  <oa:messageStyledText id="EmailId" dataType="VARCHAR2" prompt="EmailId" viewName="xxCactBankDetVO" viewAttr="EmailId" maximumLength="30"/>
+                  <oa:messageStyledText id="MobileNo" dataType="NUMBER" prompt="MobileNo" viewName="xxCactBankDetVO" viewAttr="MobileNo"/>
+                  <oa:messageStyledText id="Balance" dataType="NUMBER" prompt="Balance" viewName="xxCactBankDetVO" viewAttr="Balance"/>
+               </ui:contents>
+            </oa:messageComponentLayout>
+            <oa:table id="xxCactBankDetVO1">
+               <ui:contents>
+                  <oa:messageTextInput id="AccNo1" dataType="NUMBER" prompt="AccNo" viewName="xxCactBankDetVO" viewAttr="AccNo"/>
+                  <oa:messageTextInput id="AccountHolderName1" dataType="VARCHAR2" prompt="AccountHolderName" viewName="xxCactBankDetVO" viewAttr="AccountHolderName" maximumLength="93"/>
+                  <oa:messageTextInput id="Branch1" dataType="VARCHAR2" prompt="Branch" viewName="xxCactBankDetVO" viewAttr="Branch" maximumLength="30"/>
+                  <oa:messageTextInput id="EmailId1" dataType="VARCHAR2" prompt="EmailId" viewName="xxCactBankDetVO" viewAttr="EmailId" maximumLength="30"/>
+                  <oa:messageTextInput id="MobileNo1" dataType="NUMBER" prompt="MobileNo" viewName="xxCactBankDetVO" viewAttr="MobileNo"/>
+                  <oa:messageTextInput id="Balance1" dataType="NUMBER" prompt="Balance" viewName="xxCactBankDetVO" viewAttr="Balance"/>
+               </ui:contents>
+            </oa:table>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>
