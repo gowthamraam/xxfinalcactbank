@@ -7,6 +7,7 @@
    CustomQuery="true"
    RowClass="xxfinalcactbank.oracle.apps.fnd.cactbank.lov.server.xxCactBankStatesVORowImpl"
    ComponentClass="xxfinalcactbank.oracle.apps.fnd.cactbank.lov.server.xxCactBankStatesVOImpl"
+   FetchMode="FETCH_AS_NEEDED"
    UseGlueCode="false" >
    <SQLQuery><![CDATA[
 SELECT  a.country_id country2_id, a.state_name state2_id

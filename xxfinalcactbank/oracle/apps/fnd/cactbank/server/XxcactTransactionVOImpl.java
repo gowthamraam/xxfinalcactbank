@@ -9,6 +9,26 @@ import oracle.apps.fnd.framework.server.OAViewObjectImpl;
 public class XxcactTransactionVOImpl extends OAViewObjectImpl {
     /**This is the default constructor (do not remove)
      */
+     public void initQuery(String par)
+     {
+         if ((par != null) &&
+         
+         (!("".equals(par.trim()))))
+                 {
+             //Number ordNum = null;
+           
+            
+             System.out.println("Accno Berfore where"+par);
+            setWhereClause("Acc_no = :1");        
+             System.out.println("Accno After where"+par);
+             setWhereClauseParams(null); // Always reset
+             setWhereClauseParam(0, par);
+           
+             executeQuery();
+     
+         } // end initQuery()
+     }
+     
     public XxcactTransactionVOImpl() {
     }
 }

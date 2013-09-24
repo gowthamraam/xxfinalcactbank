@@ -35,12 +35,14 @@ public class XxcactTransactionImpl extends OAEntityImpl {
     public static final int CREATEDBY = 18;
     public static final int LASTUPDATELOGIN = 19;
     public static final int ROWID = 20;
+
     private static OAEntityDefImpl mDefinitionObject;
 
     /**This is the default constructor (do not remove)
      */
     public XxcactTransactionImpl() {
     }
+
 
     /**Retrieves the definition object for this instance class.
      */

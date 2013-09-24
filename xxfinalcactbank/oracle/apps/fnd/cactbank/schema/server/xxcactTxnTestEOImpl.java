@@ -39,12 +39,15 @@ public class xxcactTxnTestEOImpl extends OAEntityImpl {
     public static final int CREATEDBY = 22;
     public static final int LASTUPDATELOGIN = 23;
     public static final int ROWID = 24;
+
+
     private static OAEntityDefImpl mDefinitionObject;
 
     /**This is the default constructor (do not remove)
      */
     public xxcactTxnTestEOImpl() {
     }
+
 
     /**Retrieves the definition object for this instance class.
      */

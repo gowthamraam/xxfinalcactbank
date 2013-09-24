@@ -21,12 +21,14 @@
        xxcactbankBankEO.LAST_UPDATED_BY, 
        xxcactbankBankEO.CREATION_DATE, 
        xxcactbankBankEO.CREATED_BY, 
-       xxcactbankBankEO.LAST_UPDATE_LOGIN"
+       xxcactbankBankEO.LAST_UPDATE_LOGIN, 
+       xxcactbankBankEO.ROWID"
    FromList="XXCACT_BANK xxcactbankBankEO"
    BindingStyle="OracleName"
    CustomQuery="false"
    RowClass="oracle.apps.fnd.framework.server.OAViewRowImpl"
    ComponentClass="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxcactbankBankVOImpl"
+   FetchMode="FETCH_AS_NEEDED"
    UseGlueCode="false" >
    <DesignTime>
       <Attr Name="_version" Value="10.1.3.41.57" />
@@ -152,5 +154,12 @@
       EntityAttrName="LastUpdateLogin"
       EntityUsage="xxcactbankBankEO"
       AliasName="LAST_UPDATE_LOGIN" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RowID"
+      IsUpdateable="false"
+      EntityAttrName="RowID"
+      EntityUsage="xxcactbankBankEO"
+      AliasName="ROWID" >
    </ViewAttribute>
 </ViewObject>

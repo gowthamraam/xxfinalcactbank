@@ -10,22 +10,22 @@
                <ui:contents>
                   <oa:messageComponentLayout id="MainRN">
                      <ui:contents>
-                        <oa:messageStyledText id="ApplicationDate" prompt="Application Date" dataType="DATE" viewName="xxCactBankCreateVO" viewAttr="ApplDate"/>
-                        <oa:messageChoice id="AccType" dataType="VARCHAR2" prompt="Type of Account" viewName="xxCactBankCreateVO" viewAttr="AccType" pickListViewName="xxCactBankAccTypeVO" sortByViewAttr="AccountType" pickListDispAttr="AccountType" pickListValAttr="AccountType" defaultValue="initial value"/>
-                        <oa:messageChoice id="PrefCity" dataType="VARCHAR2" prompt="Preferred City" viewName="xxCactBankCreateVO" viewAttr="PrefCity" pickListViewName="xxCactBankCityVO" pickListDispAttr="CityName" pickListValAttr="Lname" pickListViewDef="">
+                        <oa:messageStyledText id="ApplicationDate" prompt="Application Date" dataType="DATE" viewName="xxCactBankCreateVO" viewAttr="ApplDate" styleClass="OraDataText"/>
+                        <oa:messageChoice id="AccType" dataType="VARCHAR2" prompt="Type of Account" viewName="xxCactBankCreateVO" viewAttr="AccType" pickListViewName="xxCactBankAccTypeVO" sortByViewAttr="AccountType" pickListDispAttr="AccountType" pickListValAttr="AccountType" defaultValue="initial value" required="yes"/>
+                        <oa:messageChoice id="PrefCity" dataType="VARCHAR2" prompt="Preferred City" viewName="xxCactBankCreateVO" viewAttr="PrefCity" pickListViewName="xxCactBankCityVO" pickListDispAttr="CityName" pickListValAttr="Lname" pickListViewDef="" required="no">
                            <ui:primaryClientAction>
                               <ui:firePartialAction/>
                            </ui:primaryClientAction>
                         </oa:messageChoice>
-                        <oa:messageChoice id="Branch" dataType="VARCHAR2" prompt="Branch" viewName="xxCactBankCreateVO" viewAttr="Branch" pickListViewDef="" pickListViewName="xxCactBankBranchVO" pickListDispAttr="BranchName" pickListValAttr="Lname"/>
+                        <oa:messageChoice id="Branch" dataType="VARCHAR2" prompt="Branch" viewName="xxCactBankCreateVO" viewAttr="Branch" pickListViewDef="" pickListViewName="xxCactBankBranchVO" pickListDispAttr="BranchName" pickListValAttr="Lname" required="no"/>
                      </ui:contents>
                   </oa:messageComponentLayout>
                </ui:contents>
             </oa:header>
-            <oa:pageButtonBar id="PageButtonBar" extends="/xxcactbank/oracle/apps/fnd/cactbank/webui/TrainFooterRN"/>
+            <oa:pageButtonBar id="PageButtonBar" extends="/xxfinalcactbank/oracle/apps/fnd/cactbank/webui/TrainFooterRN"/>
          </ui:contents>
          <ui:location>
-            <oa:train id="TrainDemoRN" extends="/xxcactbank/oracle/apps/fnd/cactbank/webui/TrainRN"/>
+            <oa:train id="TrainDemoRN" extends="/xxfinalcactbank/oracle/apps/fnd/cactbank/webui/TrainRN"/>
          </ui:location>
       </oa:pageLayout>
    </content>

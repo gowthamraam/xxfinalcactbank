@@ -4,6 +4,7 @@ import oracle.apps.fnd.framework.server.OAViewRowImpl;
 
 import oracle.jbo.domain.Date;
 import oracle.jbo.domain.Number;
+import oracle.jbo.domain.RowID;
 import oracle.jbo.server.AttributeDefImpl;
 import xxfinalcactbank.oracle.apps.fnd.cactbank.schema.server.xxCactBankCreateEOImpl;
 // ---------------------------------------------------------------------
@@ -12,55 +13,536 @@ import xxfinalcactbank.oracle.apps.fnd.cactbank.schema.server.xxCactBankCreateEO
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
 public class xxCactBankCreateVORowImpl extends OAViewRowImpl {
-    public static final int USERID = 0;
-    public static final int PASSWORD = 1;
-    public static final int FIRSTNAME = 2;
-    public static final int MIDDLENAME = 3;
-    public static final int LASTNAME = 4;
-    public static final int MOBILENO = 5;
-    public static final int EMAILID = 6;
-    public static final int REFNAME = 7;
-    public static final int DOB = 8;
-    public static final int GENDER = 9;
-    public static final int PAN = 10;
-    public static final int MARITAL = 11;
-    public static final int ANNUALINCOME = 12;
-    public static final int OCCUPATION = 13;
-    public static final int RESADDRESS1 = 14;
-    public static final int RESADDRESS2 = 15;
-    public static final int RESCITY = 16;
-    public static final int RESDISTRICT = 17;
-    public static final int RESSTATE = 18;
-    public static final int RESCOUNTRY = 19;
-    public static final int RESPINCODE = 20;
-    public static final int PERADDRESS1 = 21;
-    public static final int PERADDRESS2 = 22;
-    public static final int PERCITY = 23;
-    public static final int PERDISTRICT = 24;
-    public static final int PERSTATE = 25;
-    public static final int PERCOUNTRY = 26;
-    public static final int PERPINCODE = 27;
-    public static final int ACCTYPE = 28;
-    public static final int PREFCITY = 29;
-    public static final int BRANCH = 30;
-    public static final int DOCNAME = 31;
-    public static final int APPLDATE = 32;
-    public static final int MANAGED = 33;
-    public static final int ADDRESS1 = 34;
-    public static final int ADDRESS2 = 35;
-    public static final int CITY = 36;
-    public static final int DISTRICT = 37;
-    public static final int COUNTRY = 38;
-    public static final int PINCODE = 39;
-    public static final int STATE = 40;
-    public static final int PERADD = 41;
-    public static final int PERADD1 = 42;
-    public static final int PERADDRN = 43;
-    public static final int PERADDRN1 = 44;
+    public static final int MANAGED = 0;
+    public static final int ADDRESS1 = 1;
+    public static final int ADDRESS2 = 2;
+    public static final int CITY = 3;
+    public static final int DISTRICT = 4;
+    public static final int COUNTRY = 5;
+    public static final int PINCODE = 6;
+    public static final int STATE = 7;
+    public static final int PERADD = 8;
+    public static final int PERADD1 = 9;
+    public static final int PERADDRN = 10;
+    public static final int PERADDRN1 = 11;
+    public static final int USERID = 12;
+    public static final int PASSWORD = 13;
+    public static final int FIRSTNAME = 14;
+    public static final int MIDDLENAME = 15;
+    public static final int LASTNAME = 16;
+    public static final int MOBILENO = 17;
+    public static final int EMAILID = 18;
+    public static final int REFNAME = 19;
+    public static final int DOB = 20;
+    public static final int GENDER = 21;
+    public static final int PAN = 22;
+    public static final int MARITAL = 23;
+    public static final int ANNUALINCOME = 24;
+    public static final int OCCUPATION = 25;
+    public static final int RESADDRESS1 = 26;
+    public static final int RESADDRESS2 = 27;
+    public static final int RESCITY = 28;
+    public static final int RESDISTRICT = 29;
+    public static final int RESSTATE = 30;
+    public static final int RESCOUNTRY = 31;
+    public static final int RESPINCODE = 32;
+    public static final int PERADDRESS1 = 33;
+    public static final int PERADDRESS2 = 34;
+    public static final int PERCITY = 35;
+    public static final int PERDISTRICT = 36;
+    public static final int PERSTATE = 37;
+    public static final int PERCOUNTRY = 38;
+    public static final int PERPINCODE = 39;
+    public static final int ACCTYPE = 40;
+    public static final int PREFCITY = 41;
+    public static final int BRANCH = 42;
+    public static final int DOCNAME = 43;
+    public static final int ATTRIBUTE1 = 44;
+    public static final int ATTRIBUTE2 = 45;
+    public static final int ATTRIBUTE3 = 46;
+    public static final int ATTRIBUTE4 = 47;
+    public static final int ATTRIBUTE5 = 48;
+    public static final int ATTRIBUTE6 = 49;
+    public static final int ATTRIBUTE7 = 50;
+    public static final int ATTRIBUTE8 = 51;
+    public static final int ATTRIBUTE9 = 52;
+    public static final int ATTRIBUTE10 = 53;
+    public static final int LASTUPDATEDATE = 54;
+    public static final int LASTUPDATEDBY = 55;
+    public static final int CREATIONDATE = 56;
+    public static final int CREATEDBY = 57;
+    public static final int LASTUPDATELOGIN = 58;
+    public static final int APPLDATE = 59;
 
     /**This is the default constructor (do not remove)
      */
     public xxCactBankCreateVORowImpl() {
+    }
+
+
+    /**Gets the attribute value for the calculated attribute managed
+     */
+    public Boolean getmanaged() {
+        return (Boolean) getAttributeInternal(MANAGED);
+    }
+
+    /**Sets <code>value</code> as the attribute value for the calculated attribute managed
+     */
+    public void setmanaged(Boolean value) {
+        setAttributeInternal(MANAGED, value);
+    }
+
+    /**Gets the attribute value for the calculated attribute address1
+     */
+    public Boolean getaddress1() {
+        return (Boolean) getAttributeInternal(ADDRESS1);
+    }
+
+    /**Sets <code>value</code> as the attribute value for the calculated attribute address1
+     */
+    public void setaddress1(Boolean value) {
+        setAttributeInternal(ADDRESS1, value);
+    }
+
+    /**Gets the attribute value for the calculated attribute address2
+     */
+    public Boolean getaddress2() {
+        return (Boolean) getAttributeInternal(ADDRESS2);
+    }
+
+    /**Sets <code>value</code> as the attribute value for the calculated attribute address2
+     */
+    public void setaddress2(Boolean value) {
+        setAttributeInternal(ADDRESS2, value);
+    }
+
+    /**Gets the attribute value for the calculated attribute city
+     */
+    public Boolean getcity() {
+        return (Boolean) getAttributeInternal(CITY);
+    }
+
+    /**Sets <code>value</code> as the attribute value for the calculated attribute city
+     */
+    public void setcity(Boolean value) {
+        setAttributeInternal(CITY, value);
+    }
+
+    /**Gets the attribute value for the calculated attribute district
+     */
+    public Boolean getdistrict() {
+        return (Boolean) getAttributeInternal(DISTRICT);
+    }
+
+    /**Sets <code>value</code> as the attribute value for the calculated attribute district
+     */
+    public void setdistrict(Boolean value) {
+        setAttributeInternal(DISTRICT, value);
+    }
+
+    /**Gets the attribute value for the calculated attribute country
+     */
+    public Boolean getcountry() {
+        return (Boolean) getAttributeInternal(COUNTRY);
+    }
+
+    /**Sets <code>value</code> as the attribute value for the calculated attribute country
+     */
+    public void setcountry(Boolean value) {
+        setAttributeInternal(COUNTRY, value);
+    }
+
+    /**Gets the attribute value for the calculated attribute pincode
+     */
+    public Boolean getpincode() {
+        return (Boolean) getAttributeInternal(PINCODE);
+    }
+
+    /**Sets <code>value</code> as the attribute value for the calculated attribute pincode
+     */
+    public void setpincode(Boolean value) {
+        setAttributeInternal(PINCODE, value);
+    }
+
+    /**Gets the attribute value for the calculated attribute state
+     */
+    public Boolean getstate() {
+        return (Boolean) getAttributeInternal(STATE);
+    }
+
+    /**Sets <code>value</code> as the attribute value for the calculated attribute state
+     */
+    public void setstate(Boolean value) {
+        setAttributeInternal(STATE, value);
+    }
+
+    /**Gets the attribute value for the calculated attribute peradd
+     */
+    public Boolean getperadd() {
+        return (Boolean) getAttributeInternal(PERADD);
+    }
+
+    /**Sets <code>value</code> as the attribute value for the calculated attribute peradd
+     */
+    public void setperadd(Boolean value) {
+        setAttributeInternal(PERADD, value);
+    }
+
+    /**Gets the attribute value for the calculated attribute peradd1
+     */
+    public Boolean getperadd1() {
+        return (Boolean) getAttributeInternal(PERADD1);
+    }
+
+    /**Sets <code>value</code> as the attribute value for the calculated attribute peradd1
+     */
+    public void setperadd1(Boolean value) {
+        setAttributeInternal(PERADD1, value);
+    }
+
+    /**Gets the attribute value for the calculated attribute peraddrn
+     */
+    public Boolean getperaddrn() {
+        return (Boolean) getAttributeInternal(PERADDRN);
+    }
+
+    /**Sets <code>value</code> as the attribute value for the calculated attribute peraddrn
+     */
+    public void setperaddrn(Boolean value) {
+        setAttributeInternal(PERADDRN, value);
+    }
+
+    /**Gets the attribute value for the calculated attribute peraddrn1
+     */
+    public Boolean getperaddrn1() {
+        return (Boolean) getAttributeInternal(PERADDRN1);
+    }
+
+    /**Sets <code>value</code> as the attribute value for the calculated attribute peraddrn1
+     */
+    public void setperaddrn1(Boolean value) {
+        setAttributeInternal(PERADDRN1, value);
+    }
+
+    /**getAttrInvokeAccessor: generated method. Do not modify.
+     */
+    protected Object getAttrInvokeAccessor(int index, 
+                                           AttributeDefImpl attrDef) throws Exception {
+        switch (index) {
+        case MANAGED:
+            return getmanaged();
+        case ADDRESS1:
+            return getaddress1();
+        case ADDRESS2:
+            return getaddress2();
+        case CITY:
+            return getcity();
+        case DISTRICT:
+            return getdistrict();
+        case COUNTRY:
+            return getcountry();
+        case PINCODE:
+            return getpincode();
+        case STATE:
+            return getstate();
+        case PERADD:
+            return getperadd();
+        case PERADD1:
+            return getperadd1();
+        case PERADDRN:
+            return getperaddrn();
+        case PERADDRN1:
+            return getperaddrn1();
+        case USERID:
+            return getUserId();
+        case PASSWORD:
+            return getPassword();
+        case FIRSTNAME:
+            return getFirstName();
+        case MIDDLENAME:
+            return getMiddleName();
+        case LASTNAME:
+            return getLastName();
+        case MOBILENO:
+            return getMobileNo();
+        case EMAILID:
+            return getEmailId();
+        case REFNAME:
+            return getRefName();
+        case DOB:
+            return getDob();
+        case GENDER:
+            return getGender();
+        case PAN:
+            return getPan();
+        case MARITAL:
+            return getMarital();
+        case ANNUALINCOME:
+            return getAnnualIncome();
+        case OCCUPATION:
+            return getOccupation();
+        case RESADDRESS1:
+            return getResAddress1();
+        case RESADDRESS2:
+            return getResAddress2();
+        case RESCITY:
+            return getResCity();
+        case RESDISTRICT:
+            return getResDistrict();
+        case RESSTATE:
+            return getResState();
+        case RESCOUNTRY:
+            return getResCountry();
+        case RESPINCODE:
+            return getResPincode();
+        case PERADDRESS1:
+            return getPerAddress1();
+        case PERADDRESS2:
+            return getPerAddress2();
+        case PERCITY:
+            return getPerCity();
+        case PERDISTRICT:
+            return getPerDistrict();
+        case PERSTATE:
+            return getPerState();
+        case PERCOUNTRY:
+            return getPerCountry();
+        case PERPINCODE:
+            return getPerPincode();
+        case ACCTYPE:
+            return getAccType();
+        case PREFCITY:
+            return getPrefCity();
+        case BRANCH:
+            return getBranch();
+        case DOCNAME:
+            return getDocName();
+        case ATTRIBUTE1:
+            return getAttribute1();
+        case ATTRIBUTE2:
+            return getAttribute2();
+        case ATTRIBUTE3:
+            return getAttribute3();
+        case ATTRIBUTE4:
+            return getAttribute4();
+        case ATTRIBUTE5:
+            return getAttribute5();
+        case ATTRIBUTE6:
+            return getAttribute6();
+        case ATTRIBUTE7:
+            return getAttribute7();
+        case ATTRIBUTE8:
+            return getAttribute8();
+        case ATTRIBUTE9:
+            return getAttribute9();
+        case ATTRIBUTE10:
+            return getAttribute10();
+        case LASTUPDATEDATE:
+            return getLastUpdateDate();
+        case LASTUPDATEDBY:
+            return getLastUpdatedBy();
+        case CREATIONDATE:
+            return getCreationDate();
+        case CREATEDBY:
+            return getCreatedBy();
+        case LASTUPDATELOGIN:
+            return getLastUpdateLogin();
+        case APPLDATE:
+            return getApplDate();
+        default:
+            return super.getAttrInvokeAccessor(index, attrDef);
+        }
+    }
+
+    /**setAttrInvokeAccessor: generated method. Do not modify.
+     */
+    protected void setAttrInvokeAccessor(int index, Object value, 
+                                         AttributeDefImpl attrDef) throws Exception {
+        switch (index) {
+        case MANAGED:
+            setmanaged((Boolean)value);
+            return;
+        case ADDRESS1:
+            setaddress1((Boolean)value);
+            return;
+        case ADDRESS2:
+            setaddress2((Boolean)value);
+            return;
+        case CITY:
+            setcity((Boolean)value);
+            return;
+        case DISTRICT:
+            setdistrict((Boolean)value);
+            return;
+        case COUNTRY:
+            setcountry((Boolean)value);
+            return;
+        case PINCODE:
+            setpincode((Boolean)value);
+            return;
+        case STATE:
+            setstate((Boolean)value);
+            return;
+        case PERADD:
+            setperadd((Boolean)value);
+            return;
+        case PERADD1:
+            setperadd1((Boolean)value);
+            return;
+        case PERADDRN:
+            setperaddrn((Boolean)value);
+            return;
+        case PERADDRN1:
+            setperaddrn1((Boolean)value);
+            return;
+        case USERID:
+            setUserId((String)value);
+            return;
+        case PASSWORD:
+            setPassword((String)value);
+            return;
+        case FIRSTNAME:
+            setFirstName((String)value);
+            return;
+        case MIDDLENAME:
+            setMiddleName((String)value);
+            return;
+        case LASTNAME:
+            setLastName((String)value);
+            return;
+        case MOBILENO:
+            setMobileNo((Number)value);
+            return;
+        case EMAILID:
+            setEmailId((String)value);
+            return;
+        case REFNAME:
+            setRefName((String)value);
+            return;
+        case DOB:
+            setDob((Date)value);
+            return;
+        case GENDER:
+            setGender((String)value);
+            return;
+        case PAN:
+            setPan((String)value);
+            return;
+        case MARITAL:
+            setMarital((String)value);
+            return;
+        case ANNUALINCOME:
+            setAnnualIncome((String)value);
+            return;
+        case OCCUPATION:
+            setOccupation((String)value);
+            return;
+        case RESADDRESS1:
+            setResAddress1((String)value);
+            return;
+        case RESADDRESS2:
+            setResAddress2((String)value);
+            return;
+        case RESCITY:
+            setResCity((String)value);
+            return;
+        case RESDISTRICT:
+            setResDistrict((String)value);
+            return;
+        case RESSTATE:
+            setResState((String)value);
+            return;
+        case RESCOUNTRY:
+            setResCountry((String)value);
+            return;
+        case RESPINCODE:
+            setResPincode((Number)value);
+            return;
+        case PERADDRESS1:
+            setPerAddress1((String)value);
+            return;
+        case PERADDRESS2:
+            setPerAddress2((String)value);
+            return;
+        case PERCITY:
+            setPerCity((String)value);
+            return;
+        case PERDISTRICT:
+            setPerDistrict((String)value);
+            return;
+        case PERSTATE:
+            setPerState((String)value);
+            return;
+        case PERCOUNTRY:
+            setPerCountry((String)value);
+            return;
+        case PERPINCODE:
+            setPerPincode((Number)value);
+            return;
+        case ACCTYPE:
+            setAccType((String)value);
+            return;
+        case PREFCITY:
+            setPrefCity((String)value);
+            return;
+        case BRANCH:
+            setBranch((String)value);
+            return;
+        case DOCNAME:
+            setDocName((String)value);
+            return;
+        case ATTRIBUTE1:
+            setAttribute1((String)value);
+            return;
+        case ATTRIBUTE2:
+            setAttribute2((String)value);
+            return;
+        case ATTRIBUTE3:
+            setAttribute3((String)value);
+            return;
+        case ATTRIBUTE4:
+            setAttribute4((String)value);
+            return;
+        case ATTRIBUTE5:
+            setAttribute5((String)value);
+            return;
+        case ATTRIBUTE6:
+            setAttribute6((String)value);
+            return;
+        case ATTRIBUTE7:
+            setAttribute7((String)value);
+            return;
+        case ATTRIBUTE8:
+            setAttribute8((String)value);
+            return;
+        case ATTRIBUTE9:
+            setAttribute9((String)value);
+            return;
+        case ATTRIBUTE10:
+            setAttribute10((String)value);
+            return;
+        case LASTUPDATEDATE:
+            setLastUpdateDate((Date)value);
+            return;
+        case LASTUPDATEDBY:
+            setLastUpdatedBy((Number)value);
+            return;
+        case CREATIONDATE:
+            setCreationDate((Date)value);
+            return;
+        case CREATEDBY:
+            setCreatedBy((Number)value);
+            return;
+        case LASTUPDATELOGIN:
+            setLastUpdateLogin((Number)value);
+            return;
+        case APPLDATE:
+            setApplDate((Date)value);
+            return;
+        default:
+            super.setAttrInvokeAccessor(index, value, attrDef);
+            return;
+        }
     }
 
     /**Gets xxCactBankCreateEO entity object.
@@ -453,6 +935,186 @@ public class xxCactBankCreateVORowImpl extends OAViewRowImpl {
         setAttributeInternal(DOCNAME, value);
     }
 
+    /**Gets the attribute value for ATTRIBUTE1 using the alias name Attribute1
+     */
+    public String getAttribute1() {
+        return (String) getAttributeInternal(ATTRIBUTE1);
+    }
+
+    /**Sets <code>value</code> as attribute value for ATTRIBUTE1 using the alias name Attribute1
+     */
+    public void setAttribute1(String value) {
+        setAttributeInternal(ATTRIBUTE1, value);
+    }
+
+    /**Gets the attribute value for ATTRIBUTE2 using the alias name Attribute2
+     */
+    public String getAttribute2() {
+        return (String) getAttributeInternal(ATTRIBUTE2);
+    }
+
+    /**Sets <code>value</code> as attribute value for ATTRIBUTE2 using the alias name Attribute2
+     */
+    public void setAttribute2(String value) {
+        setAttributeInternal(ATTRIBUTE2, value);
+    }
+
+    /**Gets the attribute value for ATTRIBUTE3 using the alias name Attribute3
+     */
+    public String getAttribute3() {
+        return (String) getAttributeInternal(ATTRIBUTE3);
+    }
+
+    /**Sets <code>value</code> as attribute value for ATTRIBUTE3 using the alias name Attribute3
+     */
+    public void setAttribute3(String value) {
+        setAttributeInternal(ATTRIBUTE3, value);
+    }
+
+    /**Gets the attribute value for ATTRIBUTE4 using the alias name Attribute4
+     */
+    public String getAttribute4() {
+        return (String) getAttributeInternal(ATTRIBUTE4);
+    }
+
+    /**Sets <code>value</code> as attribute value for ATTRIBUTE4 using the alias name Attribute4
+     */
+    public void setAttribute4(String value) {
+        setAttributeInternal(ATTRIBUTE4, value);
+    }
+
+    /**Gets the attribute value for ATTRIBUTE5 using the alias name Attribute5
+     */
+    public String getAttribute5() {
+        return (String) getAttributeInternal(ATTRIBUTE5);
+    }
+
+    /**Sets <code>value</code> as attribute value for ATTRIBUTE5 using the alias name Attribute5
+     */
+    public void setAttribute5(String value) {
+        setAttributeInternal(ATTRIBUTE5, value);
+    }
+
+    /**Gets the attribute value for ATTRIBUTE6 using the alias name Attribute6
+     */
+    public String getAttribute6() {
+        return (String) getAttributeInternal(ATTRIBUTE6);
+    }
+
+    /**Sets <code>value</code> as attribute value for ATTRIBUTE6 using the alias name Attribute6
+     */
+    public void setAttribute6(String value) {
+        setAttributeInternal(ATTRIBUTE6, value);
+    }
+
+    /**Gets the attribute value for ATTRIBUTE7 using the alias name Attribute7
+     */
+    public String getAttribute7() {
+        return (String) getAttributeInternal(ATTRIBUTE7);
+    }
+
+    /**Sets <code>value</code> as attribute value for ATTRIBUTE7 using the alias name Attribute7
+     */
+    public void setAttribute7(String value) {
+        setAttributeInternal(ATTRIBUTE7, value);
+    }
+
+    /**Gets the attribute value for ATTRIBUTE8 using the alias name Attribute8
+     */
+    public String getAttribute8() {
+        return (String) getAttributeInternal(ATTRIBUTE8);
+    }
+
+    /**Sets <code>value</code> as attribute value for ATTRIBUTE8 using the alias name Attribute8
+     */
+    public void setAttribute8(String value) {
+        setAttributeInternal(ATTRIBUTE8, value);
+    }
+
+    /**Gets the attribute value for ATTRIBUTE9 using the alias name Attribute9
+     */
+    public String getAttribute9() {
+        return (String) getAttributeInternal(ATTRIBUTE9);
+    }
+
+    /**Sets <code>value</code> as attribute value for ATTRIBUTE9 using the alias name Attribute9
+     */
+    public void setAttribute9(String value) {
+        setAttributeInternal(ATTRIBUTE9, value);
+    }
+
+    /**Gets the attribute value for ATTRIBUTE10 using the alias name Attribute10
+     */
+    public String getAttribute10() {
+        return (String) getAttributeInternal(ATTRIBUTE10);
+    }
+
+    /**Sets <code>value</code> as attribute value for ATTRIBUTE10 using the alias name Attribute10
+     */
+    public void setAttribute10(String value) {
+        setAttributeInternal(ATTRIBUTE10, value);
+    }
+
+    /**Gets the attribute value for LAST_UPDATE_DATE using the alias name LastUpdateDate
+     */
+    public Date getLastUpdateDate() {
+        return (Date) getAttributeInternal(LASTUPDATEDATE);
+    }
+
+    /**Sets <code>value</code> as attribute value for LAST_UPDATE_DATE using the alias name LastUpdateDate
+     */
+    public void setLastUpdateDate(Date value) {
+        setAttributeInternal(LASTUPDATEDATE, value);
+    }
+
+    /**Gets the attribute value for LAST_UPDATED_BY using the alias name LastUpdatedBy
+     */
+    public Number getLastUpdatedBy() {
+        return (Number) getAttributeInternal(LASTUPDATEDBY);
+    }
+
+    /**Sets <code>value</code> as attribute value for LAST_UPDATED_BY using the alias name LastUpdatedBy
+     */
+    public void setLastUpdatedBy(Number value) {
+        setAttributeInternal(LASTUPDATEDBY, value);
+    }
+
+    /**Gets the attribute value for CREATION_DATE using the alias name CreationDate
+     */
+    public Date getCreationDate() {
+        return (Date) getAttributeInternal(CREATIONDATE);
+    }
+
+    /**Sets <code>value</code> as attribute value for CREATION_DATE using the alias name CreationDate
+     */
+    public void setCreationDate(Date value) {
+        setAttributeInternal(CREATIONDATE, value);
+    }
+
+    /**Gets the attribute value for CREATED_BY using the alias name CreatedBy
+     */
+    public Number getCreatedBy() {
+        return (Number) getAttributeInternal(CREATEDBY);
+    }
+
+    /**Sets <code>value</code> as attribute value for CREATED_BY using the alias name CreatedBy
+     */
+    public void setCreatedBy(Number value) {
+        setAttributeInternal(CREATEDBY, value);
+    }
+
+    /**Gets the attribute value for LAST_UPDATE_LOGIN using the alias name LastUpdateLogin
+     */
+    public Number getLastUpdateLogin() {
+        return (Number) getAttributeInternal(LASTUPDATELOGIN);
+    }
+
+    /**Sets <code>value</code> as attribute value for LAST_UPDATE_LOGIN using the alias name LastUpdateLogin
+     */
+    public void setLastUpdateLogin(Number value) {
+        setAttributeInternal(LASTUPDATELOGIN, value);
+    }
+
     /**Gets the attribute value for APPL_DATE using the alias name ApplDate
      */
     public Date getApplDate() {
@@ -463,395 +1125,5 @@ public class xxCactBankCreateVORowImpl extends OAViewRowImpl {
      */
     public void setApplDate(Date value) {
         setAttributeInternal(APPLDATE, value);
-    }
-
-    /**Gets the attribute value for the calculated attribute managed
-     */
-    public Boolean getmanaged() {
-        return (Boolean) getAttributeInternal(MANAGED);
-    }
-
-    /**Sets <code>value</code> as the attribute value for the calculated attribute managed
-     */
-    public void setmanaged(Boolean value) {
-        setAttributeInternal(MANAGED, value);
-    }
-
-    /**Gets the attribute value for the calculated attribute address1
-     */
-    public Boolean getaddress1() {
-        return (Boolean) getAttributeInternal(ADDRESS1);
-    }
-
-    /**Sets <code>value</code> as the attribute value for the calculated attribute address1
-     */
-    public void setaddress1(Boolean value) {
-        setAttributeInternal(ADDRESS1, value);
-    }
-
-    /**Gets the attribute value for the calculated attribute address2
-     */
-    public Boolean getaddress2() {
-        return (Boolean) getAttributeInternal(ADDRESS2);
-    }
-
-    /**Sets <code>value</code> as the attribute value for the calculated attribute address2
-     */
-    public void setaddress2(Boolean value) {
-        setAttributeInternal(ADDRESS2, value);
-    }
-
-    /**Gets the attribute value for the calculated attribute city
-     */
-    public Boolean getcity() {
-        return (Boolean) getAttributeInternal(CITY);
-    }
-
-    /**Sets <code>value</code> as the attribute value for the calculated attribute city
-     */
-    public void setcity(Boolean value) {
-        setAttributeInternal(CITY, value);
-    }
-
-    /**Gets the attribute value for the calculated attribute district
-     */
-    public Boolean getdistrict() {
-        return (Boolean) getAttributeInternal(DISTRICT);
-    }
-
-    /**Sets <code>value</code> as the attribute value for the calculated attribute district
-     */
-    public void setdistrict(Boolean value) {
-        setAttributeInternal(DISTRICT, value);
-    }
-
-    /**Gets the attribute value for the calculated attribute country
-     */
-    public Boolean getcountry() {
-        return (Boolean) getAttributeInternal(COUNTRY);
-    }
-
-    /**Sets <code>value</code> as the attribute value for the calculated attribute country
-     */
-    public void setcountry(Boolean value) {
-        setAttributeInternal(COUNTRY, value);
-    }
-
-    /**Gets the attribute value for the calculated attribute pincode
-     */
-    public Boolean getpincode() {
-        return (Boolean) getAttributeInternal(PINCODE);
-    }
-
-    /**Sets <code>value</code> as the attribute value for the calculated attribute pincode
-     */
-    public void setpincode(Boolean value) {
-        setAttributeInternal(PINCODE, value);
-    }
-
-    /**Gets the attribute value for the calculated attribute state
-     */
-    public Boolean getstate() {
-        return (Boolean) getAttributeInternal(STATE);
-    }
-
-    /**Sets <code>value</code> as the attribute value for the calculated attribute state
-     */
-    public void setstate(Boolean value) {
-        setAttributeInternal(STATE, value);
-    }
-
-    /**Gets the attribute value for the calculated attribute peradd
-     */
-    public Boolean getperadd() {
-        return (Boolean) getAttributeInternal(PERADD);
-    }
-
-    /**Sets <code>value</code> as the attribute value for the calculated attribute peradd
-     */
-    public void setperadd(Boolean value) {
-        setAttributeInternal(PERADD, value);
-    }
-
-    /**Gets the attribute value for the calculated attribute peradd1
-     */
-    public Boolean getperadd1() {
-        return (Boolean) getAttributeInternal(PERADD1);
-    }
-
-    /**Sets <code>value</code> as the attribute value for the calculated attribute peradd1
-     */
-    public void setperadd1(Boolean value) {
-        setAttributeInternal(PERADD1, value);
-    }
-
-    /**Gets the attribute value for the calculated attribute peraddrn
-     */
-    public Boolean getperaddrn() {
-        return (Boolean) getAttributeInternal(PERADDRN);
-    }
-
-    /**Sets <code>value</code> as the attribute value for the calculated attribute peraddrn
-     */
-    public void setperaddrn(Boolean value) {
-        setAttributeInternal(PERADDRN, value);
-    }
-
-    /**Gets the attribute value for the calculated attribute peraddrn1
-     */
-    public Boolean getperaddrn1() {
-        return (Boolean) getAttributeInternal(PERADDRN1);
-    }
-
-    /**Sets <code>value</code> as the attribute value for the calculated attribute peraddrn1
-     */
-    public void setperaddrn1(Boolean value) {
-        setAttributeInternal(PERADDRN1, value);
-    }
-
-    /**getAttrInvokeAccessor: generated method. Do not modify.
-     */
-    protected Object getAttrInvokeAccessor(int index, 
-                                           AttributeDefImpl attrDef) throws Exception {
-        switch (index) {
-        case USERID:
-            return getUserId();
-        case PASSWORD:
-            return getPassword();
-        case FIRSTNAME:
-            return getFirstName();
-        case MIDDLENAME:
-            return getMiddleName();
-        case LASTNAME:
-            return getLastName();
-        case MOBILENO:
-            return getMobileNo();
-        case EMAILID:
-            return getEmailId();
-        case REFNAME:
-            return getRefName();
-        case DOB:
-            return getDob();
-        case GENDER:
-            return getGender();
-        case PAN:
-            return getPan();
-        case MARITAL:
-            return getMarital();
-        case ANNUALINCOME:
-            return getAnnualIncome();
-        case OCCUPATION:
-            return getOccupation();
-        case RESADDRESS1:
-            return getResAddress1();
-        case RESADDRESS2:
-            return getResAddress2();
-        case RESCITY:
-            return getResCity();
-        case RESDISTRICT:
-            return getResDistrict();
-        case RESSTATE:
-            return getResState();
-        case RESCOUNTRY:
-            return getResCountry();
-        case RESPINCODE:
-            return getResPincode();
-        case PERADDRESS1:
-            return getPerAddress1();
-        case PERADDRESS2:
-            return getPerAddress2();
-        case PERCITY:
-            return getPerCity();
-        case PERDISTRICT:
-            return getPerDistrict();
-        case PERSTATE:
-            return getPerState();
-        case PERCOUNTRY:
-            return getPerCountry();
-        case PERPINCODE:
-            return getPerPincode();
-        case ACCTYPE:
-            return getAccType();
-        case PREFCITY:
-            return getPrefCity();
-        case BRANCH:
-            return getBranch();
-        case DOCNAME:
-            return getDocName();
-        case APPLDATE:
-            return getApplDate();
-        case MANAGED:
-            return getmanaged();
-        case ADDRESS1:
-            return getaddress1();
-        case ADDRESS2:
-            return getaddress2();
-        case CITY:
-            return getcity();
-        case DISTRICT:
-            return getdistrict();
-        case COUNTRY:
-            return getcountry();
-        case PINCODE:
-            return getpincode();
-        case STATE:
-            return getstate();
-        case PERADD:
-            return getperadd();
-        case PERADD1:
-            return getperadd1();
-        case PERADDRN:
-            return getperaddrn();
-        case PERADDRN1:
-            return getperaddrn1();
-        default:
-            return super.getAttrInvokeAccessor(index, attrDef);
-        }
-    }
-
-    /**setAttrInvokeAccessor: generated method. Do not modify.
-     */
-    protected void setAttrInvokeAccessor(int index, Object value, 
-                                         AttributeDefImpl attrDef) throws Exception {
-        switch (index) {
-        case USERID:
-            setUserId((String)value);
-            return;
-        case PASSWORD:
-            setPassword((String)value);
-            return;
-        case FIRSTNAME:
-            setFirstName((String)value);
-            return;
-        case MIDDLENAME:
-            setMiddleName((String)value);
-            return;
-        case LASTNAME:
-            setLastName((String)value);
-            return;
-        case MOBILENO:
-            setMobileNo((Number)value);
-            return;
-        case EMAILID:
-            setEmailId((String)value);
-            return;
-        case REFNAME:
-            setRefName((String)value);
-            return;
-        case DOB:
-            setDob((Date)value);
-            return;
-        case GENDER:
-            setGender((String)value);
-            return;
-        case PAN:
-            setPan((String)value);
-            return;
-        case MARITAL:
-            setMarital((String)value);
-            return;
-        case ANNUALINCOME:
-            setAnnualIncome((String)value);
-            return;
-        case OCCUPATION:
-            setOccupation((String)value);
-            return;
-        case RESADDRESS1:
-            setResAddress1((String)value);
-            return;
-        case RESADDRESS2:
-            setResAddress2((String)value);
-            return;
-        case RESCITY:
-            setResCity((String)value);
-            return;
-        case RESDISTRICT:
-            setResDistrict((String)value);
-            return;
-        case RESSTATE:
-            setResState((String)value);
-            return;
-        case RESCOUNTRY:
-            setResCountry((String)value);
-            return;
-        case RESPINCODE:
-            setResPincode((Number)value);
-            return;
-        case PERADDRESS1:
-            setPerAddress1((String)value);
-            return;
-        case PERADDRESS2:
-            setPerAddress2((String)value);
-            return;
-        case PERCITY:
-            setPerCity((String)value);
-            return;
-        case PERDISTRICT:
-            setPerDistrict((String)value);
-            return;
-        case PERSTATE:
-            setPerState((String)value);
-            return;
-        case PERCOUNTRY:
-            setPerCountry((String)value);
-            return;
-        case PERPINCODE:
-            setPerPincode((Number)value);
-            return;
-        case ACCTYPE:
-            setAccType((String)value);
-            return;
-        case PREFCITY:
-            setPrefCity((String)value);
-            return;
-        case BRANCH:
-            setBranch((String)value);
-            return;
-        case DOCNAME:
-            setDocName((String)value);
-            return;
-        case APPLDATE:
-            setApplDate((Date)value);
-            return;
-        case MANAGED:
-            setmanaged((Boolean)value);
-            return;
-        case ADDRESS1:
-            setaddress1((Boolean)value);
-            return;
-        case ADDRESS2:
-            setaddress2((Boolean)value);
-            return;
-        case CITY:
-            setcity((Boolean)value);
-            return;
-        case DISTRICT:
-            setdistrict((Boolean)value);
-            return;
-        case COUNTRY:
-            setcountry((Boolean)value);
-            return;
-        case PINCODE:
-            setpincode((Boolean)value);
-            return;
-        case STATE:
-            setstate((Boolean)value);
-            return;
-        case PERADD:
-            setperadd((Boolean)value);
-            return;
-        case PERADD1:
-            setperadd1((Boolean)value);
-            return;
-        case PERADDRN:
-            setperaddrn((Boolean)value);
-            return;
-        case PERADDRN1:
-            setperaddrn1((Boolean)value);
-            return;
-        default:
-            super.setAttrInvokeAccessor(index, value, attrDef);
-            return;
-        }
     }
 }

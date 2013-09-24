@@ -25,8 +25,11 @@ import oracle.apps.fnd.framework.server.OADBTransaction;
 import oracle.apps.fnd.framework.webui.OAControllerImpl;
 import oracle.apps.fnd.framework.webui.OAPageContext;
 import oracle.apps.fnd.framework.webui.OAWebBeanConstants;
+import oracle.apps.fnd.framework.webui.beans.OABodyBean;
 import oracle.apps.fnd.framework.webui.beans.OAWebBean;
+import oracle.apps.fnd.framework.webui.beans.layout.OAPageLayoutBean;
 import oracle.apps.fnd.framework.webui.beans.message.OAMessageTextInputBean;
+import oracle.apps.fnd.framework.webui.beans.nav.OAGlobalButtonBarBean;
 import oracle.apps.fnd.functionSecurity.UserIdCache;
 
 import xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxcactbanktxntestBalanceVOImpl;
@@ -40,6 +43,7 @@ public class xxCactBankLoginCO extends OAControllerImpl
   public static final String RCS_ID="$Header$";
   public static final boolean RCS_ID_RECORDED =
         VersionInfo.recordClassVersion(RCS_ID, "%packagename%");
+    static String  c ="0";
 
   /**
    * Layout and page setup logic for a region.
@@ -50,10 +54,66 @@ public class xxCactBankLoginCO extends OAControllerImpl
   {
     super.processRequest(pageContext, webBean);
     
+    OABodyBean ob=(OABodyBean)pageContext.getRootWebBean();
+      
+      pageContext.putJavaScriptFunction("click()", 
+          "var message=\"Due to security reason, Right Click is not allowed\";"+
+            "function right2(){\n"+
+                 "if (event.button==2){\n"+
+                      "alert(\"Right Click is not allowed.\");\n"+
+                      "return false;\n"+
+                  "}\n"+
+             "}\n"+
+       "function rightClickTest (e) \n" +
+       "{\n" +
+            "if (document.layers||document.getElementById&&!document.all){ \n"+
+              "if (e.which==2||e.which==3){\n"+
+                  "alert(\"You do not have permission to right click.\");\n" +
+                  "return false;\n" +
+              "}\n"+
+            "}\n"+
+        "}\n"+
+        "if (document.layers) {" +
+            "document.captureEvents(Event.MOUSEDOWN);\n" +
+            "document.onmousedown=rightClickTest;\n"+
+        "}\n"+
+        "else if (document.all&&!document.getElementById){" +
+            "document.onmousedown=right2;\n"+
+        "}\n"+
+        "document.oncontextmenu=new Function(\"alert(message);return false;\")"
+       );
+      OAPageLayoutBean page = null;
+      page=(OAPageLayoutBean)pageContext.getPageLayoutBean(); 
+      if(!page.equals(null))
+      {
+          System.out.println("Comes Inside ADV"+page);
+        page.prepareForRendering(pageContext);
+          System.out.println("Comes Inside ADV after"+page);
+         
+      }
+      
+      if(c.equals("0"))
+      {
+      System.out.println("Enetered");
+      OAGlobalButtonBarBean buttons = (OAGlobalButtonBarBean)page.getGlobalButtons();
+      System.out.println("Just a Try"+buttons);
+      if(!buttons.equals(null))
+      {
+      System.out.println("Comes Inside");
+      buttons.setRendered(false);
+          System.out.println("Comes Inside After");
+          c="Some";
+      }
+      }
+      
       OAMessageTextInputBean mtib1 = (OAMessageTextInputBean)webBean.findChildRecursive("UserId");
       mtib1.setValue(pageContext, null);
       OAMessageTextInputBean mtib2 = (OAMessageTextInputBean)webBean.findChildRecursive("Password");
       mtib2.setValue(pageContext, null);
+ 
+     
+     
+      
   }
 
   /**
@@ -73,6 +133,8 @@ public class xxCactBankLoginCO extends OAControllerImpl
       if (pageContext.getParameter(EVENT_PARAM).equals("submit"))
       {
 
+
+       
       if(i)
       {
              OAApplicationModule Am = (OAApplicationModule)pageContext.getApplicationModule(webBean);
@@ -87,10 +149,11 @@ public class xxCactBankLoginCO extends OAControllerImpl
               LogVO.first();
 
               System.out.println(LogVO.getRowCount());
-
+              System.out.println("LogVO.getCurrentRow()----->"+LogVO.getCurrentRow());
               if(LogVO.getCurrentRow() != null){
+              System.out.println("before adminPG");
               pageContext.setRedirectURL("OA.jsp?page=/xxfinalcactbank/oracle/apps/fnd/cactbank/webui/xxcactBankAdminPG");
-              
+                 System.out.println("after adminPG");
              }
               else{
               throw new OAException("Invalid username & password",OAException.ERROR);
@@ -104,25 +167,28 @@ public class xxCactBankLoginCO extends OAControllerImpl
          {
           String userid_v = pageContext.getParameter("UserId");
           String password_v = pageContext.getParameter("Password");
-      
-      
+              System.out.println("ooooooooooooooooooooooooooooooooo");
+              System.out.println("111111000000001");
           
           Serializable[] param = { userid_v, password_v};
           am.invokeMethod("InsertProc286", param);        
           HashMap hm=new HashMap();
                  hm.put("userid", userid_v);
                
-
+              System.out.println("1111111111111111111");
+              
                  OADBTransaction txn =      (OADBTransaction)((OAApplicationModuleImpl)am).getDBTransaction();
                  CallableStatement callableStatement =  txn.createCallableStatement("declare\n" + 
                  "        atere number;\n" + 
                  "        begin\n" + 
                  "        select acc_no into :1 from xxcact_bank where user_id=:2;\n" + 
                  "        end;",OADBTransaction.DEFAULT);  
+              System.out.println("22222222222222");
                  System.out.println("Callable stmt"+callableStatement);
-                 
+              System.out.println("333333333333333");
                  System.out.println("Value from the AccNo"+userid_v);
                try{
+                   System.out.println("4444444444444");
                    callableStatement.setString(1, userid_v);  
                      
                    callableStatement.setString(2, userid_v);  
@@ -132,9 +198,10 @@ public class xxCactBankLoginCO extends OAControllerImpl
                    
                
                  callableStatement.execute();  
-               
+                   System.out.println("55555555555555555");
                  outParamValue = (callableStatement.getString(1)).toString();  
                     System.out.println("outParamValueooooooooooooooooooooooooooooooooo"+outParamValue);
+                   System.out.println("66666666666666666");
                }
                catch(SQLException c)
                { 
@@ -157,8 +224,8 @@ public class xxCactBankLoginCO extends OAControllerImpl
           
           pageContext.setForwardURL("OA.jsp?page=/xxfinalcactbank/oracle/apps/fnd/cactbank/webui/xxCactBankDetailsPG",
           null,
-          //OAWebBeanConstants.KEEP_MENU_CONTEXT,
-          OAWebBeanConstants. KEEP_NO_DISPLAY_MENU_CONTEXT,
+          
+          OAWebBeanConstants.KEEP_NO_DISPLAY_MENU_CONTEXT,
           null,
           null, 
           true,
@@ -166,144 +233,20 @@ public class xxCactBankLoginCO extends OAControllerImpl
           OAWebBeanConstants.IGNORE_MESSAGES);
           }
       } 
-    
-    
-//    if (pageContext.getParameter(EVENT_PARAM).equals("submit"))
-//    {
-//    
-//        String userid_v = pageContext.getParameter("UserId");
-//        String password_v = pageContext.getParameter("Password");
-//   
-//   
-//        
-//        Serializable[] param = { userid_v, password_v};
-//        am.invokeMethod("InsertProc286", param);        
-//        HashMap hm=new HashMap();
-//               hm.put("userid", userid_v);
-//             
-//
-//               OADBTransaction txn =      (OADBTransaction)((OAApplicationModuleImpl)am).getDBTransaction();
-//               CallableStatement callableStatement =  txn.createCallableStatement("declare\n" + 
-//               "        atere number;\n" + 
-//               "        begin\n" + 
-//               "        select acc_no into :1 from xxcact_bank where user_id=:2;\n" + 
-//               "        end;",OADBTransaction.DEFAULT);  
-//               System.out.println("Callable stmt"+callableStatement);
-//               
-//               System.out.println("Value from the AccNo"+userid_v);
-//             try{
-//                 callableStatement.setString(1, userid_v);  
-//                   
-//                 callableStatement.setString(2, userid_v);  
-//                 callableStatement.registerOutParameter(1, Types.VARCHAR);  
-//             
-//             
-//                 
-//             
-//               callableStatement.execute();  
-//             
-//               outParamValue = (callableStatement.getString(1)).toString();  
-//                  System.out.println("outParamValueooooooooooooooooooooooooooooooooo"+outParamValue);
-//             }
-//             catch(SQLException c)
-//             { 
-//               System.out.println("Sql Exception Occured"+c);
-//             }
-//             System.out.println("outParamValueooooooooooooooooooooooooooooooooo"+outParamValue);
-//             HashMap hm1=new HashMap();
-//             hm1.put("userid", outParamValue);
-//             
-//             
-//               OAViewObject vo1=(OAViewObject)am.findViewObject("xxcactTxnTestVO");
-//             Serializable[] params = {outParamValue};                
-//               am.invokeMethod("tableInst", params);
-//               
-//        OAViewObject vo6=(OAViewObject)am.findViewObject("xxcactbanktxntestBalanceVO");
-//             Serializable[] params123 = {outParamValue};
-//             am.invokeMethod("tableInstBal", params123);
-//              
-//        
-//        
-//        pageContext.setForwardURL("OA.jsp?page=/xxcactbank/oracle/apps/fnd/cactbank/webui/xxCactBankDetailsPG",
-//        null,
-//        //OAWebBeanConstants.KEEP_MENU_CONTEXT,
-//        OAWebBeanConstants. KEEP_NO_DISPLAY_MENU_CONTEXT,
-//        null,
-//        null, 
-//        true,
-//        OAWebBeanConstants.ADD_BREAD_CRUMB_YES,
-//        OAWebBeanConstants.IGNORE_MESSAGES);
-//    
-//    }
       
       if (pageContext.getParameter(EVENT_PARAM).equals("createaccount"))
       {
 
         pageContext.setForwardURL("OA.jsp?page=/xxfinalcactbank/oracle/apps/fnd/cactbank/webui/xxCactBankCustDetPG",
         null,
-        //OAWebBeanConstants.KEEP_MENU_CONTEXT,
-         OAWebBeanConstants. KEEP_NO_DISPLAY_MENU_CONTEXT,
+        //OAWebBeanConstants.KEEP_NO_DISPLAY_MENU_CONTEXT,
+         OAWebBeanConstants.KEEP_NO_DISPLAY_MENU_CONTEXT,
         null,
         null, 
         true,
         OAWebBeanConstants.ADD_BREAD_CRUMB_YES,
         OAWebBeanConstants.IGNORE_MESSAGES);
       }
-   /* {
-      String username = (String) pageContext.getParameter("UserId");
-      String Password = (String) pageContext.getParameter("Password");
-      
-      System.out.println("---->username"+username);
-      System.out.println("---->password"+Password);
-//      Serializable[] params = {username,Password};                
-//      am.invokeMethod("initVOQuery", params);
-//      pageContext.setForwardURL("OA.jsp?page=/xxcactbank/oracle/apps/fnd/cactbank/webui/xxCactBankCustDetPG",
-//      null,
-//      OAWebBeanConstants.KEEP_MENU_CONTEXT,
-//      null,
-//      null, 
-//      true,
-//      OAWebBeanConstants.ADD_BREAD_CRUMB_YES,
-//      OAWebBeanConstants.IGNORE_MESSAGES);
-      System.out.println("success login");
-    OAViewObject vo = (OAViewObject)am.findViewObject("xxCactBankLoginVO");
-      //xxCactBankLoginVOImpl vo = (xxCactBankLoginVOImpl)getxxCactBankLoginVO();
-        
-          
-          if (vo == null)
-          {
-          MessageToken[] errTokens = {new MessageToken("OBJECT_NAME", "CityVO1")};
-          throw new OAException("AK", "FWK_TBX_OBJECT_NOT_FOUND", errTokens);
-           }
-          vo.setWhereClause(null);
-          vo.setWhereClauseParams(null);
-           if ((username.equals("$T"))||(Password.equals("$T"))) {
-          vo.setWhereClause("1 = 2");
-         
-           }
-           if (vo!=null)
-           {
-      vo.setWhereClause("USER_ID= :1 AND PASSWORD= :2 ");
-      vo.setWhereClauseParams(null); // Always reset
-      vo.setWhereClauseParam(0, username);
-      vo.setWhereClauseParam(1, Password);
-      System.out.println("*****************");
-      System.out.println(username);
-      System.out.println(Password);
-       
-      System.out.println("****************");
-      
-            vo.executeQuery();  
-              System.out.println("$$$$$$$$$$$$$$$$$$");
-          pageContext.setForwardURL("OA.jsp?page=/xxcactbank/oracle/apps/fnd/cactbank/webui/xxCactBankCustDetPG",
-          null,
-          OAWebBeanConstants.KEEP_MENU_CONTEXT,
-          null,
-          null, 
-          true,
-          OAWebBeanConstants.ADD_BREAD_CRUMB_YES,
-          OAWebBeanConstants.IGNORE_MESSAGES);
-          }       
-}*/
+   
   }
 }

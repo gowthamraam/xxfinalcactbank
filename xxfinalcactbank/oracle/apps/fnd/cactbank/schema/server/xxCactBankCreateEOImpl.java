@@ -78,18 +78,16 @@ public class xxCactBankCreateEOImpl extends OAEntityImpl {
     public static final int CREATEDBY = 45;
     public static final int LASTUPDATELOGIN = 46;
     public static final int APPLDATE = 47;
+
+
     private static OAEntityDefImpl mDefinitionObject;
 
     /**This is the default constructor (do not remove)
      */
     public xxCactBankCreateEOImpl() {
     }
-    public void create(AttributeList attributeList) {
-            super.create(attributeList);
-            
-            OADBTransaction transaction = getOADBTransaction();
-                    setApplDate(transaction.getCurrentDBDate());
-        }
+
+
     /**Retrieves the definition object for this instance class.
      */
     public static synchronized EntityDefImpl getDefinitionObject() {
@@ -99,6 +97,13 @@ public class xxCactBankCreateEOImpl extends OAEntityImpl {
         }
         return mDefinitionObject;
     }
+
+    public void create(AttributeList attributeList) {
+            super.create(attributeList);
+            
+            OADBTransaction transaction = getOADBTransaction();
+                    setApplDate(transaction.getCurrentDBDate());
+        }
 
     /**Gets the attribute value for UserId, using the alias name UserId
      */

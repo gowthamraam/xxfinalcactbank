@@ -6,6 +6,7 @@ import oracle.apps.fnd.framework.server.OAEntityImpl;
 import oracle.jbo.Key;
 import oracle.jbo.domain.Date;
 import oracle.jbo.domain.Number;
+import oracle.jbo.domain.RowID;
 import oracle.jbo.server.AttributeDefImpl;
 import oracle.jbo.server.EntityDefImpl;
 // ---------------------------------------------------------------------
@@ -33,12 +34,16 @@ public class xxcactbankBankEOImpl extends OAEntityImpl {
     public static final int CREATIONDATE = 16;
     public static final int CREATEDBY = 17;
     public static final int LASTUPDATELOGIN = 18;
+    public static final int ROWID = 19;
+
+
     private static OAEntityDefImpl mDefinitionObject;
 
     /**This is the default constructor (do not remove)
      */
     public xxcactbankBankEOImpl() {
     }
+
 
     /**Retrieves the definition object for this instance class.
      */
@@ -321,6 +326,8 @@ public class xxcactbankBankEOImpl extends OAEntityImpl {
             return getCreatedBy();
         case LASTUPDATELOGIN:
             return getLastUpdateLogin();
+        case ROWID:
+            return getRowID();
         default:
             return super.getAttrInvokeAccessor(index, attrDef);
         }
@@ -398,5 +405,11 @@ public class xxcactbankBankEOImpl extends OAEntityImpl {
      */
     public static Key createPrimaryKey(String userId) {
         return new Key(new Object[]{userId});
+    }
+
+    /**Gets the attribute value for RowID, using the alias name RowID
+     */
+    public RowID getRowID() {
+        return (RowID)getAttributeInternal(ROWID);
     }
 }

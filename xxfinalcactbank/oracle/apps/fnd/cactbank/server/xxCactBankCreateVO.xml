@@ -35,12 +35,28 @@
        xxCactBankCreateEO.PREF_CITY, 
        xxCactBankCreateEO.BRANCH, 
        xxCactBankCreateEO.DOC_NAME, 
+       xxCactBankCreateEO.ATTRIBUTE1, 
+       xxCactBankCreateEO.ATTRIBUTE2, 
+       xxCactBankCreateEO.ATTRIBUTE3, 
+       xxCactBankCreateEO.ATTRIBUTE4, 
+       xxCactBankCreateEO.ATTRIBUTE5, 
+       xxCactBankCreateEO.ATTRIBUTE6, 
+       xxCactBankCreateEO.ATTRIBUTE7, 
+       xxCactBankCreateEO.ATTRIBUTE8, 
+       xxCactBankCreateEO.ATTRIBUTE9, 
+       xxCactBankCreateEO.ATTRIBUTE10, 
+       xxCactBankCreateEO.LAST_UPDATE_DATE, 
+       xxCactBankCreateEO.LAST_UPDATED_BY, 
+       xxCactBankCreateEO.CREATION_DATE, 
+       xxCactBankCreateEO.CREATED_BY, 
+       xxCactBankCreateEO.LAST_UPDATE_LOGIN, 
        xxCactBankCreateEO.APPL_DATE"
    FromList="XXCACT_CUSTOMER xxCactBankCreateEO"
    BindingStyle="OracleName"
    CustomQuery="false"
    RowClass="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankCreateVORowImpl"
    ComponentClass="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankCreateVOImpl"
+   FetchMode="FETCH_AS_NEEDED"
    UseGlueCode="false" >
    <DesignTime>
       <Attr Name="_isCodegen" Value="true" />
@@ -55,204 +71,6 @@
       </DesignTime>
    </EntityUsage>
    <ViewAttribute
-      Name="UserId"
-      EntityAttrName="UserId"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="USER_ID" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="Password"
-      EntityAttrName="Password"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="PASSWORD" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="FirstName"
-      EntityAttrName="FirstName"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="FIRST_NAME" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="MiddleName"
-      EntityAttrName="MiddleName"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="MIDDLE_NAME" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="LastName"
-      EntityAttrName="LastName"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="LAST_NAME" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="MobileNo"
-      EntityAttrName="MobileNo"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="MOBILE_NO" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="EmailId"
-      EntityAttrName="EmailId"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="EMAIL_ID" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="RefName"
-      EntityAttrName="RefName"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="REF_NAME" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="Dob"
-      EntityAttrName="Dob"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="DOB" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="Gender"
-      EntityAttrName="Gender"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="GENDER" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="Pan"
-      EntityAttrName="Pan"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="PAN" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="Marital"
-      EntityAttrName="Marital"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="MARITAL" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="AnnualIncome"
-      EntityAttrName="AnnualIncome"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="ANNUAL_INCOME" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="Occupation"
-      EntityAttrName="Occupation"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="OCCUPATION" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="ResAddress1"
-      EntityAttrName="ResAddress1"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="RES_ADDRESS1" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="ResAddress2"
-      EntityAttrName="ResAddress2"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="RES_ADDRESS2" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="ResCity"
-      EntityAttrName="ResCity"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="RES_CITY" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="ResDistrict"
-      EntityAttrName="ResDistrict"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="RES_DISTRICT" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="ResState"
-      EntityAttrName="ResState"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="RES_STATE" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="ResCountry"
-      EntityAttrName="ResCountry"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="RES_COUNTRY" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="ResPincode"
-      EntityAttrName="ResPincode"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="RES_PINCODE" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="PerAddress1"
-      EntityAttrName="PerAddress1"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="PER_ADDRESS1" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="PerAddress2"
-      EntityAttrName="PerAddress2"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="PER_ADDRESS2" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="PerCity"
-      EntityAttrName="PerCity"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="PER_CITY" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="PerDistrict"
-      EntityAttrName="PerDistrict"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="PER_DISTRICT" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="PerState"
-      EntityAttrName="PerState"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="PER_STATE" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="PerCountry"
-      EntityAttrName="PerCountry"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="PER_COUNTRY" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="PerPincode"
-      EntityAttrName="PerPincode"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="PER_PINCODE" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="AccType"
-      EntityAttrName="AccType"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="ACC_TYPE" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="PrefCity"
-      EntityAttrName="PrefCity"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="PREF_CITY" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="Branch"
-      EntityAttrName="Branch"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="BRANCH" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="DocName"
-      EntityAttrName="DocName"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="DOC_NAME" >
-   </ViewAttribute>
-   <ViewAttribute
-      Name="ApplDate"
-      EntityAttrName="ApplDate"
-      EntityUsage="xxCactBankCreateEO"
-      AliasName="APPL_DATE" >
-   </ViewAttribute>
-   <ViewAttribute
       Name="managed"
       IsSelected="false"
       IsPersistent="false"
@@ -260,6 +78,9 @@
       ColumnType="NUMBER"
       AliasName="VIEW_ATTR"
       SQLType="BIT" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
    </ViewAttribute>
    <ViewAttribute
       Name="address1"
@@ -269,6 +90,9 @@
       ColumnType="NUMBER"
       AliasName="VIEW_ATTR"
       SQLType="BIT" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
    </ViewAttribute>
    <ViewAttribute
       Name="address2"
@@ -278,6 +102,9 @@
       ColumnType="NUMBER"
       AliasName="VIEW_ATTR"
       SQLType="BIT" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
    </ViewAttribute>
    <ViewAttribute
       Name="city"
@@ -287,6 +114,9 @@
       ColumnType="NUMBER"
       AliasName="VIEW_ATTR"
       SQLType="BIT" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
    </ViewAttribute>
    <ViewAttribute
       Name="district"
@@ -296,6 +126,9 @@
       ColumnType="NUMBER"
       AliasName="VIEW_ATTR"
       SQLType="BIT" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
    </ViewAttribute>
    <ViewAttribute
       Name="country"
@@ -305,6 +138,9 @@
       ColumnType="NUMBER"
       AliasName="VIEW_ATTR"
       SQLType="BIT" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
    </ViewAttribute>
    <ViewAttribute
       Name="pincode"
@@ -314,6 +150,9 @@
       ColumnType="NUMBER"
       AliasName="VIEW_ATTR"
       SQLType="BIT" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
    </ViewAttribute>
    <ViewAttribute
       Name="state"
@@ -323,6 +162,9 @@
       ColumnType="NUMBER"
       AliasName="VIEW_ATTR"
       SQLType="BIT" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
    </ViewAttribute>
    <ViewAttribute
       Name="peradd"
@@ -332,6 +174,9 @@
       ColumnType="NUMBER"
       AliasName="VIEW_ATTR"
       SQLType="BIT" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
    </ViewAttribute>
    <ViewAttribute
       Name="peradd1"
@@ -341,6 +186,9 @@
       ColumnType="NUMBER"
       AliasName="VIEW_ATTR"
       SQLType="BIT" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
    </ViewAttribute>
    <ViewAttribute
       Name="peraddrn"
@@ -350,6 +198,9 @@
       ColumnType="NUMBER"
       AliasName="VIEW_ATTR"
       SQLType="BIT" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
    </ViewAttribute>
    <ViewAttribute
       Name="peraddrn1"
@@ -359,5 +210,440 @@
       ColumnType="NUMBER"
       AliasName="VIEW_ATTR"
       SQLType="BIT" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UserId"
+      EntityAttrName="UserId"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="USER_ID" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Password"
+      EntityAttrName="Password"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PASSWORD" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="FirstName"
+      EntityAttrName="FirstName"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="FIRST_NAME" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="MiddleName"
+      EntityAttrName="MiddleName"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="MIDDLE_NAME" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastName"
+      EntityAttrName="LastName"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="LAST_NAME" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="MobileNo"
+      EntityAttrName="MobileNo"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="MOBILE_NO" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="EmailId"
+      EntityAttrName="EmailId"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="EMAIL_ID" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RefName"
+      EntityAttrName="RefName"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="REF_NAME" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Dob"
+      EntityAttrName="Dob"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="DOB" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Gender"
+      EntityAttrName="Gender"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="GENDER" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Pan"
+      EntityAttrName="Pan"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PAN" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Marital"
+      EntityAttrName="Marital"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="MARITAL" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="AnnualIncome"
+      EntityAttrName="AnnualIncome"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="ANNUAL_INCOME" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Occupation"
+      EntityAttrName="Occupation"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="OCCUPATION" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ResAddress1"
+      EntityAttrName="ResAddress1"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="RES_ADDRESS1" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ResAddress2"
+      EntityAttrName="ResAddress2"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="RES_ADDRESS2" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ResCity"
+      EntityAttrName="ResCity"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="RES_CITY" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ResDistrict"
+      EntityAttrName="ResDistrict"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="RES_DISTRICT" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ResState"
+      EntityAttrName="ResState"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="RES_STATE" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ResCountry"
+      EntityAttrName="ResCountry"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="RES_COUNTRY" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ResPincode"
+      EntityAttrName="ResPincode"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="RES_PINCODE" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PerAddress1"
+      EntityAttrName="PerAddress1"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PER_ADDRESS1" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PerAddress2"
+      EntityAttrName="PerAddress2"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PER_ADDRESS2" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PerCity"
+      EntityAttrName="PerCity"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PER_CITY" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PerDistrict"
+      EntityAttrName="PerDistrict"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PER_DISTRICT" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PerState"
+      EntityAttrName="PerState"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PER_STATE" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PerCountry"
+      EntityAttrName="PerCountry"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PER_COUNTRY" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PerPincode"
+      EntityAttrName="PerPincode"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PER_PINCODE" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="AccType"
+      EntityAttrName="AccType"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="ACC_TYPE" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PrefCity"
+      EntityAttrName="PrefCity"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="PREF_CITY" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Branch"
+      EntityAttrName="Branch"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="BRANCH" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DocName"
+      EntityAttrName="DocName"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="DOC_NAME" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute1"
+      EntityAttrName="Attribute1"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="ATTRIBUTE1" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute2"
+      EntityAttrName="Attribute2"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="ATTRIBUTE2" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute3"
+      EntityAttrName="Attribute3"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="ATTRIBUTE3" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute4"
+      EntityAttrName="Attribute4"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="ATTRIBUTE4" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute5"
+      EntityAttrName="Attribute5"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="ATTRIBUTE5" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute6"
+      EntityAttrName="Attribute6"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="ATTRIBUTE6" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute7"
+      EntityAttrName="Attribute7"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="ATTRIBUTE7" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute8"
+      EntityAttrName="Attribute8"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="ATTRIBUTE8" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute9"
+      EntityAttrName="Attribute9"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="ATTRIBUTE9" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute10"
+      EntityAttrName="Attribute10"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="ATTRIBUTE10" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdateDate"
+      EntityAttrName="LastUpdateDate"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="LAST_UPDATE_DATE" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdatedBy"
+      EntityAttrName="LastUpdatedBy"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="LAST_UPDATED_BY" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreationDate"
+      EntityAttrName="CreationDate"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="CREATION_DATE" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreatedBy"
+      EntityAttrName="CreatedBy"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="CREATED_BY" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdateLogin"
+      EntityAttrName="LastUpdateLogin"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="LAST_UPDATE_LOGIN" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ApplDate"
+      EntityAttrName="ApplDate"
+      EntityUsage="xxCactBankCreateEO"
+      AliasName="APPL_DATE" >
+      <Properties>
+         <Property Name ="CRAWL_VISIBILITY_LEVEL" Value ="GLOBAL" />
+      </Properties>
    </ViewAttribute>
 </ViewObject>

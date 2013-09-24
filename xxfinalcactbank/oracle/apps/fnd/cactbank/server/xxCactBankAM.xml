@@ -10,10 +10,6 @@
       <Attr Name="_deployType" Value="0" />
    </DesignTime>
    <ViewUsage
-      Name="xxCactBankCreateVO"
-      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankCreateVO" >
-   </ViewUsage>
-   <ViewUsage
       Name="xxCactBankCityVO"
       ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.poplist.server.xxCactBankCityVO" >
    </ViewUsage>
@@ -36,10 +32,6 @@
    <ViewUsage
       Name="xxCactBankLoginVO"
       ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankLoginVO" >
-   </ViewUsage>
-   <ViewUsage
-      Name="xxCactAttachmentVO"
-      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactAttachmentVO" >
    </ViewUsage>
    <ViewUsage
       Name="xxCactBankOccTypeVO"
@@ -82,12 +74,12 @@
       ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxcactBankValiVO" >
    </ViewUsage>
    <ViewUsage
-      Name="xxcactbankBankVO"
-      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxcactbankBankVO" >
-   </ViewUsage>
-   <ViewUsage
       Name="xxcactBanktxnTestMyTVO"
       ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxcactBanktxnTestMyTVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxcactbankBankVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxcactbankBankVO" >
    </ViewUsage>
    <ViewUsage
       Name="xxcactTxnTestVO1"
@@ -96,5 +88,9 @@
    <ViewUsage
       Name="xxcactTxnTestVO2"
       ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxcactTxnTestVO2" >
+   </ViewUsage>
+   <ViewUsage
+      Name="xxCactBankCreateVO"
+      ViewObjectName="xxfinalcactbank.oracle.apps.fnd.cactbank.server.xxCactBankCreateVO" >
    </ViewUsage>
 </AppModule>

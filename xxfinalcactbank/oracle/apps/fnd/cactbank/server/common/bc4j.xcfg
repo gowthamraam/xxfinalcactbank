@@ -18,9 +18,7 @@
       <ENTRY name="ConnectionName" value="4iapps"/>
       <ENTRY name="SID" value="VISTEST"/>
       <ENTRY name="JdbcDriver" value="oracle.jdbc.OracleDriver"/>
-      <ENTRY name="password">
-         <![CDATA[{904}05F9D3AAF29666292234D1B047752E3C5B]]>
-      </ENTRY>
+      <ENTRY name="password">{904}05F9D3AAF29666292234D1B047752E3C5B</ENTRY>
       <ENTRY name="ORACLE_JDBC_TYPE" value="thin"/>
       <ENTRY name="DeployPassword" value="true"/>
    </ConnectionDefinition>

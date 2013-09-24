@@ -21,18 +21,18 @@
                               <oa:spacer id="item328" height="100"/>
                               <oa:messageComponentLayout id="region71">
                                  <ui:contents>
-                                    <oa:messageTextInput id="UserId" prompt="User Id" columns="35" showRequired="true"/>
+                                    <oa:messageTextInput id="UserId" prompt="User Id" columns="35" showRequired="true" shortDesc="User Id"/>
                                  </ui:contents>
                               </oa:messageComponentLayout>
                               <oa:spacer id="item32" height="10"/>
                               <oa:messageComponentLayout id="region92">
                                  <ui:contents>
-                                    <oa:messageTextInput id="Password" prompt="Password" columns="35" secret="true" showRequired="true"/>
+                                    <oa:messageTextInput id="Password" prompt="Password" columns="35" secret="true" showRequired="true" shortDesc="Password"/>
                                     <oa:messageStyledText id="item325" rows="20"/>
                                     <oa:messageStyledText id="item326"/>
                                     <oa:messageLayout id="messageLayout1">
                                        <ui:contents>
-                                          <oa:submitButton id="Submit" text="Login" prompt="Login" serverUnvalidated="true" unvalidated="true">
+                                          <oa:submitButton id="Submit" text="Login" prompt="Login" serverUnvalidated="true" unvalidated="true" shortDesc="Login">
                                              <ui:primaryClientAction>
                                                 <ui:fireAction event="submit">
                                                    <ui:parameters>
@@ -42,7 +42,7 @@
                                              </ui:primaryClientAction>
                                           </oa:submitButton>
                                           <oa:spacer id="item329" height="20"/>
-                                          <oa:submitButton id="CreateAccount" prompt="Create Account">
+                                          <oa:submitButton id="CreateAccount" prompt="Create Account" shortDesc="Create Account">
                                              <ui:primaryClientAction>
                                                 <ui:fireAction event="createaccount"/>
                                              </ui:primaryClientAction>

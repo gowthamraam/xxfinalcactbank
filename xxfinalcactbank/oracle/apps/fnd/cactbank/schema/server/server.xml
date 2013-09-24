@@ -25,6 +25,16 @@
       ObjectType="Entity" >
    </Containee>
    <Containee
+      Name="xxCactBankCreateEO"
+      FullName="xxfinalcactbank.oracle.apps.fnd.cactbank.schema.server.xxCactBankCreateEO"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="xxCactBankCreateEO"
+      FullName="xxfinalcactbank.oracle.apps.fnd.cactbank.schema.server.xxCactBankCreateEO"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
       Name="XxcactTransaction"
       FullName="xxfinalcactbank.oracle.apps.fnd.cactbank.schema.server.XxcactTransaction"
       ObjectType="Entity" >

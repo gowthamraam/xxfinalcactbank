@@ -86,12 +86,39 @@ public class xxCactBankDetailsCO extends OAControllerImpl
   {
   
   System.out.println("Ctrlr Invoked");
+  
+      
+      pageContext.putJavaScriptFunction("click()", 
+          "var message=\"Due to security reason, Right Click is not allowed\";"+
+            "function right2(){\n"+
+                 "if (event.button==2){\n"+
+                      "alert(\"Right Click is not allowed.\");\n"+
+                      "return false;\n"+
+                  "}\n"+
+             "}\n"+
+       "function rightClickTest (e) \n" +
+       "{\n" +
+            "if (document.layers||document.getElementById&&!document.all){ \n"+
+              "if (e.which==2||e.which==3){\n"+
+                  "alert(\"You do not have permission to right click.\");\n" +
+                  "return false;\n" +
+              "}\n"+
+            "}\n"+
+        "}\n"+
+        "if (document.layers) {" +
+            "document.captureEvents(Event.MOUSEDOWN);\n" +
+            "document.onmousedown=rightClickTest;\n"+
+        "}\n"+
+        "else if (document.all&&!document.getElementById){" +
+            "document.onmousedown=right2;\n"+
+        "}\n"+
+        "document.oncontextmenu=new Function(\"alert(message);return false;\")"
+       );
+
     super.processRequest(pageContext, webBean);
     OAApplicationModule am=(OAApplicationModule)pageContext.getApplicationModule(webBean);
       TransactionUnitHelper.startTransactionUnit(pageContext,"BankLoginTxn");
                 String userid_v = pageContext.getParameter("UserId");
-          
-      
               Serializable[] parameters = { userid_v };
               am.invokeMethod("initDetails", parameters);
       
@@ -170,26 +197,7 @@ public class xxCactBankDetailsCO extends OAControllerImpl
           jbalup.setValue(pageContext, lsbal);
           //**************************************************
             
-      //      String  ls=(String)j1.
-      //      System.out.println("Obtained the Bean Value"+ls);
-      //     OAViewObject v3=(OAViewObject)am.findViewObject("xxCactBankDetVO");
-      //      System.out.println("Sop of xxCactBankDetVO"+v3);
-      ////      if(v3.getCurrentRow().equals(null))
-      ////      {
-      ////            System.out.println("xxCactBankDetVO 8is null"+v3);
-      ////      }
-      //       String k= (v3.getCurrentRow().getAttribute("AccNo")).toString();
-      //
-      //       System.out.println("S5tring k is "+v3.getCurrentRow());
-      //      OAViewObject v2=(OAViewObject)am.findViewObject("XxcactTransactionVO");
-      //      v2.getCurrentRow().setAttribute("AccNo", ls);
-      //      String l=(v2.getCurrentRow().getAttribute("AccNo")).toString();
-      //
-      //       System.out.println("This is something we can see Stirng l"+l);
-          
-      //      xxCactBankDetVORowImpl vo3=(xxCactBankDetVORowImpl)am.findViewObject("xxcactxxCactBankDetVO");
-      ////      Object v= (Object)vo3.getAccNo();
-      ////      System.out.println("The Account Number is"+v);
+    
           
 
       
@@ -210,51 +218,12 @@ public class xxCactBankDetailsCO extends OAControllerImpl
               System.out.println("Event has Occured--------------------->"+EVENT_PARAM);
               System.out.println("Source Paramer--------------->"+SOURCE_PARAM); 
           
-    //      OAViewObject be=(OAViewObject)am.findViewObject("XxcactTransactionVO");
-    //      System.out.println(be.getRowCount());
-    //      int fetchedRowCount = 0;
-    //      
-    //      System.out.println("Event Param is "+EVENT_PARAM);
-    //      
-
-    ////      String rowReference = pageContext.getParameter(OAWebBeanConstants.EVENT_SOURCE_ROW_REFERENCE);
-    //
-    //
-    // OAViewObject v3=(OAViewObject)am.findViewObject("xxCactBankDetVO");
-    // System.out.println("Sop of xxCactBankDetVO"+v3);
-    // if(v3.getCurrentRow().equals(null))
-    // {
-    //       System.out.println("xxCactBankDetVO 8is null"+v3);
-    // }
-    //      String k= (v3.getCurrentRow().getAttribute("AccNo")).toString();
-    //      System.out.println("Value of k is "+k);
-    //      
-    //      
-    //      OAViewObject v2=(OAViewObject)am.findViewObject("XxcactTransactionVO");
-    //      v2.getCurrentRow().setAttribute("AccNo", k);
-    //      String l=(v2.getCurrentRow().getAttribute("AccNo")).toString();
-    //      
-    //      System.out.println("The Value of String L is "+l);
-    //      //   j=n.toString();
-     //System.out.println("My Current Row Index"+v2.getCurrentRowIndex());
-    //    OAViewObject v2=(OAViewObject)am.findViewObject("XxcactTransactionVO");
-    //   //=v1.getCurrentRow.getAttribute("AccountHolderName");
-    //   j=n.toString();
-    //      v2.getCurrentRow().setAttribute("AccNo", j);
-    //      String k=pageContext.getParameter("AccHolderName1");
-    //    System.out.println("Account holder Name"+k);
-         // OAApplicationModule am1 = pageContext.getApplicationModule(webBean); 
-    //      String rowReference = pageContext.getParameter(OAWebBeanConstants.EVENT_SOURCE_ROW_REFERENCE);
-    //      XxcactTransactionVORowImpl poRow1 = (XxcactTransactionVORowImpl)am.findRowByRef(rowReference);
-    //      poRow1.setAttribute("AccHolderName", k);
-    //    
+    
 
      /*************submit button*********/
      if("submit".equals(pageContext.getParameter(EVENT_PARAM)))
      {
-    //  if("insert".equals(pageContext.getParameter(EVENT_PARAM)))
-    //  {
-
+   
          boolean gpdf=true;
         System.out.println("TransferAccNo------------>"+pageContext.getParameter("TransferAccNo3"));
          System.out.println("Amount------------>"+pageContext.getParameter("Debit2"));
@@ -263,14 +232,6 @@ public class xxCactBankDetailsCO extends OAControllerImpl
          {                   
          throw new OAException("Invalid AccNo or Amount", OAException.ERROR);
          }
-    //     else if(gpdf)
-    //     {
-    //         xxCactBankDetailsCO cactCO=new xxCactBankDetailsCO();
-    //        if(cactCO.amountValidation(pageContext, webBean).equals("invalid")||((cactCO.accountValidation(pageContext, webBean).equals("invalid"))))
-    //        {
-    //            throw new OAException("Value not Found");
-    //        }
-    //     }
      
      else
      {
@@ -293,14 +254,11 @@ public class xxCactBankDetailsCO extends OAControllerImpl
             
                  System.out.println("Control Came to Amount Validate");
                  xxCactBankDetailsCO cactCO1=new xxCactBankDetailsCO();
-               //        System.out.println("Control Came to Account Validate");
-               //        xxCactBankDetailsCO cactCO=new xxCactBankDetailsCO();
-                 OAViewObject ReqVO1   =   (OAViewObject)am.findViewObject("xxcactBankValiVO");
+                  OAViewObject ReqVO1   =   (OAViewObject)am.findViewObject("xxcactBankValiVO");
                  OAViewRowImpl lo1=(OAViewRowImpl)ReqVO.first();
                  System.out.println(lo);
                  OAMessageTextInputBean a1=(OAMessageTextInputBean)webBean.findChildRecursive("Debit2");
                  String column1="Debit";
-               //  String k=cactCO.accountValidation();
                  String k2=cactCO.amountValidation(pageContext,  webBean, ReqVO1, a1, lo1, column1);
                  System.out.println(k2);
                        
@@ -326,8 +284,7 @@ public class xxCactBankDetailsCO extends OAControllerImpl
          OAViewObject voBalance=(OAViewObject)am.findViewObject("xxcactTxnTestVO1");   //First VO where there is data (Source VO)
          int n258=Integer.valueOf((voBalance.getCurrentRow().getAttribute("Balance")).toString());  //Obtaining the Debit Value to make changes in Balance
          int n852=Integer.valueOf((voBalance.getCurrentRow().getAttribute("Debit")).toString());   // Obtaining Value from Balance
-        //String lpr=Integer.toString(n258-n852);  //Making a simple Calculation that Balance-Debit
-         String lpr=Integer.toString(n258);  //Making a simple Calculation that Balance-Debit
+           String lpr=Integer.toString(n258);  //Making a simple Calculation that Balance-Debit
          System.out.println("The Updated Balance is "+lpr);
          System.out.println(voBalance.getCurrentRow().getAttribute("Balance")); //Obtaining the value before the balance 
          voBalance.getCurrentRow().setAttribute("Balance", lpr);   //Setting the Current Balance
@@ -348,18 +305,13 @@ public class xxCactBankDetailsCO extends OAControllerImpl
           
          xxcactTxnTestVO1Impl vow=(xxcactTxnTestVO1Impl)am.findViewObject("xxcactTxnTestVO1");
          vow.getCurrentRow().setAttribute("Sno", seqNoSno);
-//          OAMessageStyledTextBean jtxn=(OAMessageStyledTextBean)webBean.findChildRecursive("Sno1");
-//          jtxn.setValue(pageContext, seqNoSno);       
-          //**************************************************
+    //**************************************************
           
           
            //**************************************************
           /* Setting Transaction Id Number  for in Money Transaction */
            String aas=(txn.getSequenceValue("xxcact_transaction_txn_ss")).toString();
-        // xxcactTxnTestVO1Impl vow1=(xxcactTxnTestVO1Impl)am.findViewObject("xxcactTxnTestVO1");
-         vow.getCurrentRow().setAttribute("TransactionId", aas);
-//          OAMessageStyledTextBean jSno=(OAMessageStyledTextBean)webBean.findChildRecursive("TransactionId1");
-//          jSno.setValue(pageContext, aas);
+           vow.getCurrentRow().setAttribute("TransactionId", aas);
           System.out.println("Sequence No is ----------------------------------------------------------------------------------->"+aas);
           //**************************************************
           
@@ -386,18 +338,14 @@ public class xxCactBankDetailsCO extends OAControllerImpl
                   
                   for(int i=0;i<(attrCount-1);i++) //looping Attributes
                   {
-                       //  System.out.println("VO Iteration And its Value Starts "+voIter.getAttributeDef().getName());
-                       System.out.println("The Value of I is This Comes to testing :**********"+i);   //Obtaining the index numbers for looping 
+                         System.out.println("The Value of I is This Comes to testing :**********"+i);   //Obtaining the index numbers for looping 
                       System.out.println("AttrDefs "+attrDefs[i]);
                       System.out.println("AttrDefs Testing Obtaining name"+attrDefs[i].getName());
                       System.out.println("AttrDefs Testing Obtaining Property"+attrDefs[i].getProperty(attrDefs[i].getName()));
-                     // System.out.println("AttrDefs Testing"+attrDefs[i].getProperty(attrDefs[i].));
-                      xxcactTxnTestVO1RowImpl roloe=(xxcactTxnTestVO1RowImpl)voIter.getCurrentRow();//Registering the current row to the View Object here the current row is the create row
-                    //  System.out.println("Getting Row Count of the values"+voIter.getRowCount());
+                        xxcactTxnTestVO1RowImpl roloe=(xxcactTxnTestVO1RowImpl)voIter.getCurrentRow();//Registering the current row to the View Object here the current row is the create row
                       System.out.println("AttrDefs Testing Otaining value by row wise "+roloe.getAttribute(attrDefs[i].getName()));
                       System.out.println("AttrDefs Testing Otaining name by row wise "+attrDefs[i].getName());
-                      // System.out.println("Attribute Value Obtaining Value row wise  "+roloe.getAttribute((roloe.getAttribute(attrDefs[i].getName())).toString()));// Obtaining a value from the retrived Row attributes
-                     
+
                        if((attrDefs[i].getName()).equals("TransferAccNo"))  //Making my Own Modifications If You want to just copy without Modyfying just use the Logic in ELSE
                        {
                            destvo.getCurrentRow().setAttribute(attrDefs[i-1].getName(), roloe.getAttribute(attrDefs[i].getName())) ;
@@ -425,8 +373,7 @@ public class xxCactBankDetailsCO extends OAControllerImpl
                          System.out.println("The Value of Iop is "+iop);
                          iop.setWhereClauseParam(0, k);
                          iop.setWhereClauseParam(1, k);
-                         //iop.setOrderByClause("Sno Desc");
-                         iop.executeQuery();
+                          iop.executeQuery();
                          iop.first();
                          String iol=(iop.getCurrentRow().getAttribute("Balance")).toString();
                          
@@ -453,18 +400,8 @@ public class xxCactBankDetailsCO extends OAControllerImpl
          //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------     
             
             
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
      am.invokeMethod("apply");
-     OAException confirmMessage = new OAException("DEM279","ACCOUNT_STATUS_REQUIRED",null,OAException.CONFIRMATION, null);
+     OAException confirmMessage = new OAException("CBK","ACCOUNT_STATUS_REQUIRED",null,OAException.CONFIRMATION, null);
      pageContext.putDialogMessage(confirmMessage);
      
          System.out.println("The Account number is "+ls);
@@ -473,7 +410,7 @@ public class xxCactBankDetailsCO extends OAControllerImpl
      
      pageContext.forwardImmediately("OA.jsp?page=/xxfinalcactbank/oracle/apps/fnd/cactbank/webui/xxCactBankDetailsPG",
      null,
-     //OAWebBeanConstants.KEEP_MENU_CONTEXT, 
+    
      OAWebBeanConstants.KEEP_NO_DISPLAY_MENU_CONTEXT,
      null,
      null,
@@ -496,18 +433,10 @@ public class xxCactBankDetailsCO extends OAControllerImpl
      OAWebBeanConstants.KEEP_NO_DISPLAY_MENU_CONTEXT,
      null,
      null,
-     true, // retain AM
+     false, // retain AM
      OAWebBeanConstants.ADD_BREAD_CRUMB_NO);
      
-     //                      pageContext.setForwardURL("OA.jsp?page=/xxcactbank/oracle/apps/fnd/cactbank/webui/xxCactBankLoginPG",
-     //                      null,
-     //                      OAWebBeanConstants.KEEP_MENU_CONTEXT,
-     //                      null,
-     //                      null,
-     //                      true,
-     //                      OAWebBeanConstants.ADD_BREAD_CRUMB_YES,
-     //                      OAWebBeanConstants.IGNORE_MESSAGES);
-     
+      
      
      }
 
@@ -534,14 +463,11 @@ public class xxCactBankDetailsCO extends OAControllerImpl
           {
             System.out.println("Control Came to Amount Validate");
             xxCactBankDetailsCO cactCO=new xxCactBankDetailsCO();
-          //        System.out.println("Control Came to Account Validate");
-          //        xxCactBankDetailsCO cactCO=new xxCactBankDetailsCO();
-            OAViewObject ReqVO   =   (OAViewObject)am.findViewObject("xxcactBankValiVO");
+                    OAViewObject ReqVO   =   (OAViewObject)am.findViewObject("xxcactBankValiVO");
             OAViewRowImpl lo=(OAViewRowImpl)ReqVO.first();
             System.out.println(lo);
             OAMessageTextInputBean a=(OAMessageTextInputBean)webBean.findChildRecursive("Debit2");
-            String column="Debit";
-          //  String k=cactCO.accountValidation();
+            String column="Debit";       
             String k2=cactCO.amountValidation(pageContext,  webBean, ReqVO, a, lo, column);
             System.out.println(k2);
               OAMessageStyledTextBean jbal=(OAMessageStyledTextBean)webBean.findChildRecursive("Balance");
@@ -554,283 +480,283 @@ public class xxCactBankDetailsCO extends OAControllerImpl
      
      
      
-     
-     /*
-     
-     
-      if("validate1".equals(pageContext.getParameter(EVENT_PARAM)))
-      {
-      System.out.println("Validation Event Occured"+EVENT_PARAM);
-      int dummyAccNo =200; //A Dummy Variable for Comparison
-      OAViewObject vo1 =(OAViewObject)am.findViewObject("xxcactBankValiVO"); // Obtaining VO instance for iterating the values
-      System.out.println("Vo Executed"+vo1);
-      xxcactBankValiVORowImpl row = null; //Assigning a variable for Row to get Attributes
-      vo1.getRowCount(); //Getting the Values of Row Count This is important because when FetchedRowCount() method is called
-      int fetchedRowCount132 = vo1.getFetchedRowCount(); //Obtaining the Fetched Row Count
-      System.out.println("Value Of Fetched Row Count "+fetchedRowCount132);
-      RowSetIterator rowsetiterator = vo1.createRowSetIterator("MyTestIter");
-      System.out.println("Vo Executed My Delete Ieteradfjkhnjnjshfuhj"+rowsetiterator);
-      if (fetchedRowCount132 > 0)
-      {
-      rowsetiterator.setRangeStart(0); //Assiging the Range
-      rowsetiterator.setRangeSize(fetchedRowCount132);
-      for (int i = 0; i < fetchedRowCount132; i++)
-      {
-      row = (xxcactBankValiVORowImpl)rowsetiterator.getRowAtRangeIndex(i); //Iterating and passing values for each row to get printed
-      System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex()+"Acc No Before"+row.getAccNo()+"Something");
-           System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex());
-          System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.first());
-          System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex()+"Acc No After"+row.getAccNo());
-          System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex());
-      //        System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex());
-      System.out.println("Obtaining the from Row Set Iterator"+row);
-      Number primaryKey = row.getAccNo();// Getting the Value of Each Attributes
-      Number a=row.getBalance();
-      int b=row.getAttributeCount();
-      System.out.println("Value of Account Number"+primaryKey+" Value of Balance"+a+"Value of Attribute Count "+b);
-      if (primaryKey.compareTo(dummyAccNo) == 0)
-      {
-      System.out.println("Values Match"+primaryKey);
-      break; // only one possible selected row in this case
-      }
-      }
-      }
-      // Always close the iterator when you’re done.
-      rowsetiterator.closeRowSetIterator();
-      }
-     
-     
-     
-     */
-     
-    /*
-        if("validate1".equals(pageContext.getParameter(EVENT_PARAM)))
-        {
-        System.out.println("Validation Event Occured"+EVENT_PARAM);
-        int dummyAccNo =200; //A Dummy Variable for Comparison
-        OAViewObject vo1 =(OAViewObject)am.findViewObject("xxcactBankValiVO"); // Obtaining VO instance for iterating the values
-        System.out.println("Vo Executed"+vo1);
-        xxcactBankValiVORowImpl row = null; //Assigning a variable for Row to get Attributes
-        vo1.getRowCount(); //Getting the Values of Row Count This is important because when FetchedRowCount() method is called
-        int fetchedRowCount132 = vo1.getFetchedRowCount(); //Obtaining the Fetched Row Count
-        System.out.println("Value Of Fetched Row Count "+fetchedRowCount132);
-        RowSetIterator rowsetiterator = vo1.createRowSetIterator("MyTestIter");
-        System.out.println("Vo Executed My Delete Ieteradfjkhnjnjshfuhj"+rowsetiterator);
-        if (fetchedRowCount132 > 0)
-        {
-        rowsetiterator.setRangeStart(0); //Assiging the Range
-        rowsetiterator.setRangeSize(fetchedRowCount132);
-        for (int i = 0; i < fetchedRowCount132; i++)
-        {
-        row = (xxcactBankValiVORowImpl)rowsetiterator.getRowAtRangeIndex(i); //Iterating and passing values for each row to get printed
-        System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex()+"Acc No Before"+row.getAccNo()+"Something");
-             System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex());
-            System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.first());
-            System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex()+"Acc No After"+row.getAccNo());
-            System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex());
-    //        System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex());
-        System.out.println("Obtaining the from Row Set Iterator"+row);
-        Number primaryKey = row.getAccNo();// Getting the Value of Each Attributes
-        Number a=row.getBalance();
-        int b=row.getAttributeCount();
-        System.out.println("Value of Account Number"+primaryKey+" Value of Balance"+a+"Value of Attribute Count "+b);
-        if (primaryKey.compareTo(dummyAccNo) == 0)
-        {
-        System.out.println("Values Match"+primaryKey);
-        break; // only one possible selected row in this case
-        }
-        }
-        }
-        // Always close the iterator when you’re done.
-        rowsetiterator.closeRowSetIterator();
-        }
-    */
-
-
-
-    //       if (null!=ReqVO) {
-    //           Row ReqRow = ReqVO.first();            
-    //           if (null != ReqRow) {
-    //                       
-    //           int idx = ReqVO.getRowCount();
-    //  
-    //           for (int xx = 0; xx < idx; xx++) {
-    //               if (null != ReqRow) {
-    //                  // Do some work....
-    //                  ReqRow = ReqVO.next();
-    //               } 
-    //               else {}
-    //           }
-    //         }
-    //       }
-    //    
-        
-        
-
-        /*
-             if("validate123".equals(pageContext.getParameter(EVENT_PARAM)))
-             {
-              System.out.println("Event Parameter -------->"+EVENT_PARAM);
-              OAMessageTextInputBean a=(OAMessageTextInputBean)webBean.findChildRecursive("TransferAccNo");
-              String k=(a.getValue(pageContext)).toString();
-              System.out.println("kkkkkkkkkkkkkkkkkkk----------->"+EVENT_PARAM+k+a);
-                 {
-                    OAViewObject vo1 =(OAViewObject)am.findViewObject("xxcactBankValiVO");
-                    System.out.println("VO Object Created----------->"+vo1);
-         
-                     vo1.executeQuery();
-                       xxcactBankValiVORowImpl row = null;
-                     fetchedRowCount = vo1.getFetchedRowCount();
-                     System.out.println("Fetched Row Count for our Info"+fetchedRowCount);
-                  
-                 if(vo1.getCurrentRow()!= null){
-                  fetchedRowCount = vo1.getFetchedRowCount();
-                  
-                  System.out.println("GetCurrent Row is no t null"+fetchedRowCount);
-                 }
-                 else
-                 {
-                     System.out.println("GetCurrent Row is  null" );
-                 }
-                    // String rowReference =pageContext.getParameter(OAWebBeanConstants.EVENT_SOURCE_ROW_REFERENCE);
-                          
-                 System.out.println(vo1.getRowCount());
-                 
-                     
-                 fetchedRowCount = vo1.getFetchedRowCount();
-                 System.out.println("Get Fetched Row Count+++++++++++++"+vo1.getFetchedRowCount());
-                 
-                     System.out.println("Get Fetched Row Count+++++++++++++"+fetchedRowCount);
-                 RowSetIterator deleteIter = vo1.createRowSetIterator("RowIteerasdfaw");
-                 System.out.println("hasuidhrfuwisfjknalseuiyhl"+deleteIter);
-                  //   System.out.println("GetCurrent Row is  null");
-                 // We use a separate iterator -- even though we could step through
-                 // rows without it -- because we don't want to affect row currency.
-              
-               
-                 if (fetchedRowCount > 0)
-                 {
-                     System.out.println("Fetched row count  is greater than zero");
-                System.out.println("Delete Iter Range Start"+deleteIter.setRangeStart(0)); 
-               
-              //   System.out.println("Delete Iter setRange Size"+deleteIter.setRangeSize(fetchedRowCount));
-                 for (int i = 0; i <= fetchedRowCount; i++)
-                 {
-                        
-                     System.out.println("looping Takes place------------------------->"+i);
-                 row = (xxcactBankValiVORowImpl)deleteIter.getRowAtRangeIndex(i);
-                     System.out.println("Looped Values"+deleteIter.getRowAtRangeIndex(i)+"Number varies jlkasj"+i+"Row values"+row);
-     
-                   
-                   vo1.first();
-                  deleteIter.setRangeStart(0);
-                  System.out.println(row);
-              //    deleteIter.setRangeSize(fetchedRowCount);
-                 String primaryKey = (row.getAccNo()).toString();
-                     if(primaryKey==null)
-                     {
-                        primaryKey="0";
-                     }
-                 System.out.println("Sting Obtained"+primaryKey+"fetchedRowCount"+fetchedRowCount+"The Current Row Index is "+ vo1.getCurrentRowIndex());
-                 System.out.println("Stirng k-------------->"+k);
-                
-                 if (primaryKey.compareTo(k) == 0)
-                 {
-                 
-                System.out.println("Values Match and "+primaryKey);
-                        
-                         lemon++;
-    //                 OAException message = new OAException("This is a valid number.",OAException.INFORMATION);
-    //                 pageContext.putDialogMessage(message);
-                         break;
-                 }else
-                 {
-                // throw new OAException("Value not Found");
-                 }
-                 
-                 } 
-                 }      deleteIter.closeRowSetIterator();
-                         System.out.println("This is Counter Variable "+lemon);
-                 if(lemon==0)
-                 {
-                     OAException message = new OAException("This is a invalid number.",OAException.ERROR);
-                     pageContext.putDialogMessage(message);
-                 }
-                 } 
-                
-                 }
-             
-                 // Always close the iterator when you're done.
-                */
-                  
-             
-             
-        
-
-     
-        
-    //        
-    //      System.out.println("enter under apply");
-    //      OADBTransaction tranx =      (OADBTransaction)((OAApplicationModuleImpl)am).getDBTransaction();
-    //     // OADBTransaction tranx = (OADBTransaction)getDBTransaction();
-    //      
-    //
-    //      String sql="begin INSERTPROC286(:1, :2); end;";
-    //
-    //      CallableStatement csmt;
-    //
-    //      csmt=tranx.createCallableStatement(sql,1);
-    //
-    //      try
-    //
-    //      {
-    //
-    //      csmt.setString(1,username_v);
-    //
-    //      csmt.setString(2,password_v);
-    //
-    //
-    //      csmt.execute();
-    //
-    //      }catch(SQLException e){ throw new OAException("Invalid UserId or Password",OAException.ERROR);}
-    //
-    //      
-    //          OAViewObject vo =(OAViewObject)am.findViewObject("XxcactTransactionVO");
-    //          {
-    //          OAMessageTextInputBean k=(OAMessageTextInputBean)webBean.findChildRecursive("Amount");
-    //          String lock=(k.getValue(pageContext)).toString();
-    //          if ((lock != null) &&
-    //          (!("".equals(lock.trim()))))
-    //          {
-    //          // Do the following conversion for type consistency.
-    //
-    //          vo.setWhereClause("Balance = :1 AND SNO=(SELECT MAX(SNO)) FROM TXN_TEST");
-    //          vo.setWhereClauseParams(null); // Always reset
-    //          vo.setWhereClauseParam(0, lock);
-    //          vo.executeQuery();
-    //          }
-    //          
-    //      
-    //          System.out.println("Event has Occured"+EVENT_PARAM);
-    //          System.out.println("Source Paramer"+SOURCE_PARAM);  
-    //      }
-    //   
-
-           //**************************************************
-          
-    //       OAMessageStyledTextBean jbal=(OAMessageStyledTextBean)webBean.findChildRecursive("Balance");
-    //         String  lsbal=(String)jbal.getValue(pageContext);
-    //         int jj=Integer.parseInt(lsbal);
-    //         int lk=jj-l;
-    //         lsbal=Integer.toString(lk);
-    //         System.out.println("Obtained the Bean Value from Balance"+lsbal);
-    //       OAMessageStyledTextBean jbalup=(OAMessageStyledTextBean)webBean.findChildRecursive("Balance3");
-    //       jbalup.setValue(pageContext, lsbal);
-    //       //**************************************************
-    //
-    //
-    //  } /* Setting Balance for in Money Transaction */
-    //
+//     
+//     /*
+//     
+//     
+//      if("validate1".equals(pageContext.getParameter(EVENT_PARAM)))
+//      {
+//      System.out.println("Validation Event Occured"+EVENT_PARAM);
+//      int dummyAccNo =200; //A Dummy Variable for Comparison
+//      OAViewObject vo1 =(OAViewObject)am.findViewObject("xxcactBankValiVO"); // Obtaining VO instance for iterating the values
+//      System.out.println("Vo Executed"+vo1);
+//      xxcactBankValiVORowImpl row = null; //Assigning a variable for Row to get Attributes
+//      vo1.getRowCount(); //Getting the Values of Row Count This is important because when FetchedRowCount() method is called
+//      int fetchedRowCount132 = vo1.getFetchedRowCount(); //Obtaining the Fetched Row Count
+//      System.out.println("Value Of Fetched Row Count "+fetchedRowCount132);
+//      RowSetIterator rowsetiterator = vo1.createRowSetIterator("MyTestIter");
+//      System.out.println("Vo Executed My Delete Ieteradfjkhnjnjshfuhj"+rowsetiterator);
+//      if (fetchedRowCount132 > 0)
+//      {
+//      rowsetiterator.setRangeStart(0); //Assiging the Range
+//      rowsetiterator.setRangeSize(fetchedRowCount132);
+//      for (int i = 0; i < fetchedRowCount132; i++)
+//      {
+//      row = (xxcactBankValiVORowImpl)rowsetiterator.getRowAtRangeIndex(i); //Iterating and passing values for each row to get printed
+//      System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex()+"Acc No Before"+row.getAccNo()+"Something");
+//           System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex());
+//          System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.first());
+//          System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex()+"Acc No After"+row.getAccNo());
+//          System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex());
+//      //        System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex());
+//      System.out.println("Obtaining the from Row Set Iterator"+row);
+//      Number primaryKey = row.getAccNo();// Getting the Value of Each Attributes
+//      Number a=row.getBalance();
+//      int b=row.getAttributeCount();
+//      System.out.println("Value of Account Number"+primaryKey+" Value of Balance"+a+"Value of Attribute Count "+b);
+//      if (primaryKey.compareTo(dummyAccNo) == 0)
+//      {
+//      System.out.println("Values Match"+primaryKey);
+//      break; // only one possible selected row in this case
+//      }
+//      }
+//      }
+//      // Always close the iterator when you’re done.
+//      rowsetiterator.closeRowSetIterator();
+//      }
+//     
+//     
+//     
+//     */
+//     
+//    /*
+//        if("validate1".equals(pageContext.getParameter(EVENT_PARAM)))
+//        {
+//        System.out.println("Validation Event Occured"+EVENT_PARAM);
+//        int dummyAccNo =200; //A Dummy Variable for Comparison
+//        OAViewObject vo1 =(OAViewObject)am.findViewObject("xxcactBankValiVO"); // Obtaining VO instance for iterating the values
+//        System.out.println("Vo Executed"+vo1);
+//        xxcactBankValiVORowImpl row = null; //Assigning a variable for Row to get Attributes
+//        vo1.getRowCount(); //Getting the Values of Row Count This is important because when FetchedRowCount() method is called
+//        int fetchedRowCount132 = vo1.getFetchedRowCount(); //Obtaining the Fetched Row Count
+//        System.out.println("Value Of Fetched Row Count "+fetchedRowCount132);
+//        RowSetIterator rowsetiterator = vo1.createRowSetIterator("MyTestIter");
+//        System.out.println("Vo Executed My Delete Ieteradfjkhnjnjshfuhj"+rowsetiterator);
+//        if (fetchedRowCount132 > 0)
+//        {
+//        rowsetiterator.setRangeStart(0); //Assiging the Range
+//        rowsetiterator.setRangeSize(fetchedRowCount132);
+//        for (int i = 0; i < fetchedRowCount132; i++)
+//        {
+//        row = (xxcactBankValiVORowImpl)rowsetiterator.getRowAtRangeIndex(i); //Iterating and passing values for each row to get printed
+//        System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex()+"Acc No Before"+row.getAccNo()+"Something");
+//             System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex());
+//            System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.first());
+//            System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex()+"Acc No After"+row.getAccNo());
+//            System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex());
+//    //        System.out.println("xxcactBankValiVO Current Row ------------------------------------------------------------->"+vo1.getCurrentRowIndex());
+//        System.out.println("Obtaining the from Row Set Iterator"+row);
+//        Number primaryKey = row.getAccNo();// Getting the Value of Each Attributes
+//        Number a=row.getBalance();
+//        int b=row.getAttributeCount();
+//        System.out.println("Value of Account Number"+primaryKey+" Value of Balance"+a+"Value of Attribute Count "+b);
+//        if (primaryKey.compareTo(dummyAccNo) == 0)
+//        {
+//        System.out.println("Values Match"+primaryKey);
+//        break; // only one possible selected row in this case
+//        }
+//        }
+//        }
+//        // Always close the iterator when you’re done.
+//        rowsetiterator.closeRowSetIterator();
+//        }
+//    */
+//
+//
+//
+//    //       if (null!=ReqVO) {
+//    //           Row ReqRow = ReqVO.first();            
+//    //           if (null != ReqRow) {
+//    //                       
+//    //           int idx = ReqVO.getRowCount();
+//    //  
+//    //           for (int xx = 0; xx < idx; xx++) {
+//    //               if (null != ReqRow) {
+//    //                  // Do some work....
+//    //                  ReqRow = ReqVO.next();
+//    //               } 
+//    //               else {}
+//    //           }
+//    //         }
+//    //       }
+//    //    
+//        
+//        
+//
+//        /*
+//             if("validate123".equals(pageContext.getParameter(EVENT_PARAM)))
+//             {
+//              System.out.println("Event Parameter -------->"+EVENT_PARAM);
+//              OAMessageTextInputBean a=(OAMessageTextInputBean)webBean.findChildRecursive("TransferAccNo");
+//              String k=(a.getValue(pageContext)).toString();
+//              System.out.println("kkkkkkkkkkkkkkkkkkk----------->"+EVENT_PARAM+k+a);
+//                 {
+//                    OAViewObject vo1 =(OAViewObject)am.findViewObject("xxcactBankValiVO");
+//                    System.out.println("VO Object Created----------->"+vo1);
+//         
+//                     vo1.executeQuery();
+//                       xxcactBankValiVORowImpl row = null;
+//                     fetchedRowCount = vo1.getFetchedRowCount();
+//                     System.out.println("Fetched Row Count for our Info"+fetchedRowCount);
+//                  
+//                 if(vo1.getCurrentRow()!= null){
+//                  fetchedRowCount = vo1.getFetchedRowCount();
+//                  
+//                  System.out.println("GetCurrent Row is no t null"+fetchedRowCount);
+//                 }
+//                 else
+//                 {
+//                     System.out.println("GetCurrent Row is  null" );
+//                 }
+//                    // String rowReference =pageContext.getParameter(OAWebBeanConstants.EVENT_SOURCE_ROW_REFERENCE);
+//                          
+//                 System.out.println(vo1.getRowCount());
+//                 
+//                     
+//                 fetchedRowCount = vo1.getFetchedRowCount();
+//                 System.out.println("Get Fetched Row Count+++++++++++++"+vo1.getFetchedRowCount());
+//                 
+//                     System.out.println("Get Fetched Row Count+++++++++++++"+fetchedRowCount);
+//                 RowSetIterator deleteIter = vo1.createRowSetIterator("RowIteerasdfaw");
+//                 System.out.println("hasuidhrfuwisfjknalseuiyhl"+deleteIter);
+//                  //   System.out.println("GetCurrent Row is  null");
+//                 // We use a separate iterator -- even though we could step through
+//                 // rows without it -- because we don't want to affect row currency.
+//              
+//               
+//                 if (fetchedRowCount > 0)
+//                 {
+//                     System.out.println("Fetched row count  is greater than zero");
+//                System.out.println("Delete Iter Range Start"+deleteIter.setRangeStart(0)); 
+//               
+//              //   System.out.println("Delete Iter setRange Size"+deleteIter.setRangeSize(fetchedRowCount));
+//                 for (int i = 0; i <= fetchedRowCount; i++)
+//                 {
+//                        
+//                     System.out.println("looping Takes place------------------------->"+i);
+//                 row = (xxcactBankValiVORowImpl)deleteIter.getRowAtRangeIndex(i);
+//                     System.out.println("Looped Values"+deleteIter.getRowAtRangeIndex(i)+"Number varies jlkasj"+i+"Row values"+row);
+//     
+//                   
+//                   vo1.first();
+//                  deleteIter.setRangeStart(0);
+//                  System.out.println(row);
+//              //    deleteIter.setRangeSize(fetchedRowCount);
+//                 String primaryKey = (row.getAccNo()).toString();
+//                     if(primaryKey==null)
+//                     {
+//                        primaryKey="0";
+//                     }
+//                 System.out.println("Sting Obtained"+primaryKey+"fetchedRowCount"+fetchedRowCount+"The Current Row Index is "+ vo1.getCurrentRowIndex());
+//                 System.out.println("Stirng k-------------->"+k);
+//                
+//                 if (primaryKey.compareTo(k) == 0)
+//                 {
+//                 
+//                System.out.println("Values Match and "+primaryKey);
+//                        
+//                         lemon++;
+//    //                 OAException message = new OAException("This is a valid number.",OAException.INFORMATION);
+//    //                 pageContext.putDialogMessage(message);
+//                         break;
+//                 }else
+//                 {
+//                // throw new OAException("Value not Found");
+//                 }
+//                 
+//                 } 
+//                 }      deleteIter.closeRowSetIterator();
+//                         System.out.println("This is Counter Variable "+lemon);
+//                 if(lemon==0)
+//                 {
+//                     OAException message = new OAException("This is a invalid number.",OAException.ERROR);
+//                     pageContext.putDialogMessage(message);
+//                 }
+//                 } 
+//                
+//                 }
+//             
+//                 // Always close the iterator when you're done.
+//                */
+//                  
+//             
+//             
+//        
+//
+//     
+//        
+//    //        
+//    //      System.out.println("enter under apply");
+//    //      OADBTransaction tranx =      (OADBTransaction)((OAApplicationModuleImpl)am).getDBTransaction();
+//    //     // OADBTransaction tranx = (OADBTransaction)getDBTransaction();
+//    //      
+//    //
+//    //      String sql="begin INSERTPROC286(:1, :2); end;";
+//    //
+//    //      CallableStatement csmt;
+//    //
+//    //      csmt=tranx.createCallableStatement(sql,1);
+//    //
+//    //      try
+//    //
+//    //      {
+//    //
+//    //      csmt.setString(1,username_v);
+//    //
+//    //      csmt.setString(2,password_v);
+//    //
+//    //
+//    //      csmt.execute();
+//    //
+//    //      }catch(SQLException e){ throw new OAException("Invalid UserId or Password",OAException.ERROR);}
+//    //
+//    //      
+//    //          OAViewObject vo =(OAViewObject)am.findViewObject("XxcactTransactionVO");
+//    //          {
+//    //          OAMessageTextInputBean k=(OAMessageTextInputBean)webBean.findChildRecursive("Amount");
+//    //          String lock=(k.getValue(pageContext)).toString();
+//    //          if ((lock != null) &&
+//    //          (!("".equals(lock.trim()))))
+//    //          {
+//    //          // Do the following conversion for type consistency.
+//    //
+//    //          vo.setWhereClause("Balance = :1 AND SNO=(SELECT MAX(SNO)) FROM TXN_TEST");
+//    //          vo.setWhereClauseParams(null); // Always reset
+//    //          vo.setWhereClauseParam(0, lock);
+//    //          vo.executeQuery();
+//    //          }
+//    //          
+//    //      
+//    //          System.out.println("Event has Occured"+EVENT_PARAM);
+//    //          System.out.println("Source Paramer"+SOURCE_PARAM);  
+//    //      }
+//    //   
+//
+//           //**************************************************
+//          
+//    //       OAMessageStyledTextBean jbal=(OAMessageStyledTextBean)webBean.findChildRecursive("Balance");
+//    //         String  lsbal=(String)jbal.getValue(pageContext);
+//    //         int jj=Integer.parseInt(lsbal);
+//    //         int lk=jj-l;
+//    //         lsbal=Integer.toString(lk);
+//    //         System.out.println("Obtained the Bean Value from Balance"+lsbal);
+//    //       OAMessageStyledTextBean jbalup=(OAMessageStyledTextBean)webBean.findChildRecursive("Balance3");
+//    //       jbalup.setValue(pageContext, lsbal);
+//    //       //**************************************************
+//    //
+//    //
+//    //  } /* Setting Balance for in Money Transaction */
+//    //
     }
 
 

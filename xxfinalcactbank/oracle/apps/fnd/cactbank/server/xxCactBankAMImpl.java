@@ -39,9 +39,35 @@ import oracle.apps.fnd.framework.server.OADBTransactionImpl;
 import oracle.jdbc.OracleCallableStatement; 
 import java.sql.Types;
 
+import java.util.Properties;
+
 import oracle.apps.fnd.framework.OARow;
 
 import oracle.jbo.Transaction;
+
+import oracle.jbo.domain.Number;
+import oracle.jbo.domain.Date;
+import java.io.IOException;
+import java.io.InputStream;
+
+import java.sql.SQLException;
+
+import java.util.Properties;
+
+import javax.mail.Message;
+import javax.mail.Message.RecipientType;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
+
+
+import oracle.apps.fnd.framework.OAViewObject;
+import oracle.apps.fnd.framework.server.OAApplicationModuleImpl;
+import oracle.apps.fnd.framework.server.OAViewObjectImpl;
 
 import xxfinalcactbank.oracle.apps.fnd.cactbank.poplist.server.xxcactTxnTypeVOImpl;
 // ---------------------------------------------------------------------
@@ -54,15 +80,6 @@ public class xxCactBankAMImpl extends OAApplicationModuleImpl {
      */
     public xxCactBankAMImpl() {
     }
-
-
-    /**Container's getter for xxCactBankCreateVO
-     */
-    public xxCactBankCreateVOImpl getxxCactBankCreateVO() {
-        return (xxCactBankCreateVOImpl)findViewObject("xxCactBankCreateVO");
-    }
-    
-    
 
 
     public void initEnameVOQuery(String City)
@@ -152,38 +169,36 @@ public class xxCactBankAMImpl extends OAApplicationModuleImpl {
     }*/
     
     //code from gowtham
-
-
-	   public void createANewRow(OAViewObject viewObj)
-                {
-                    //xxWell11DCVO1 vo=
-                    System.out.println("Creating a new row method called"+viewObj);
-                  
-                    
-                    if(!viewObj.isPreparedForExecution())
+     public void createANewRow(OAViewObject viewObj)
                     {
-                     viewObj.executeQuery();
-                    }
-                    Row row=viewObj.createRow();
-                    viewObj.insertRow(row);
-                    row.setNewRowState(Row.STATUS_INITIALIZED);
-                } 
-        
+                        //xxWell11DCVO1 vo=
+                        System.out.println("Creating a new row method called"+viewObj);
+                      
+                        
+                        if(!viewObj.isPreparedForExecution())
+                        {
+                         viewObj.executeQuery();
+                        }
+                        Row row=viewObj.createRow();
+                        viewObj.insertRow(row);
+                        row.setNewRowState(Row.STATUS_INITIALIZED);
+                    } 
+            
 
 
-             public void createEntryTestDebit()
-             {             
-                 xxcactTxnTestVO1Impl vo1 =getxxcactTxnTestVO1();
-                 this.createANewRow(vo1);
-             } 
-             
-        public void createEntryTestCredit()
-        {
+                 public void createEntryTestDebit()
+                 {             
+                     xxcactTxnTestVO1Impl vo1 =getxxcactTxnTestVO1();
+                     this.createANewRow(vo1);
+                 } 
+                 
+            public void createEntryTestCredit()
+            {
 
-            xxcactTxnTestVO2Impl vo1=getxxcactTxnTestVO2();
-            this.createANewRow(vo1);       
-          
-        }
+                xxcactTxnTestVO2Impl vo1=getxxcactTxnTestVO2();
+                this.createANewRow(vo1);       
+              
+            }
 
 
      public void createEntryTestAdmin()
@@ -392,6 +407,78 @@ public class xxCactBankAMImpl extends OAApplicationModuleImpl {
         return (xxCactBankDocTypeVOImpl)findViewObject("xxCactBankDocTypeVO");
     }
     
+    /*****************Code for Email*********************/
+     private String from;
+     private String to;
+     private String subject;
+     private String text;
+
+     public void sendMail(String from, String to, String subject, String text){
+     this.from = from;
+     this.to = to;
+     this.subject = subject;
+     this.text = text; 
+     }
+     
+    public void send(){
+    System.out.print("Test MAil sent23232323");
+
+    boolean debug = true;
+    Properties props = new Properties();
+    props.put("mail.smtp.host", "smtp.gmail.com");
+    props.put("mail.smtp.port", "465");
+    props.put("mail.smtp.auth", "true");
+    props.put("mail.debug", "true");
+    props.put("mail.smtp.socketFactory.fallback", "false");
+    props.put("mail.smtp.socketFactory.port", "465");
+    props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+    props.put("mail.smtp.starttls.enable", "true");
+
+    //Session mailSession = Session.getDefaultInstance(props);
+     Session mailSession =Session.getInstance(props, new javax.mail.Authenticator() {
+
+    protected PasswordAuthentication getPasswordAuthentication() {
+    return new PasswordAuthentication("cactesbank@gmail.com", "welcome@4i");
+    }
+    });
+    //    Session mailSession = Session.getDefaultInstance(props,new javax.mail.Authenticator() {
+    //
+    //    protected PasswordAuthentication getPasswordAuthentication() {
+    //    return new PasswordAuthentication("p.davidrichards@gmail.com", "pathinathan");
+    //    }
+    //    });
+
+    mailSession.setDebug(debug);
+
+
+
+    Message simpleMessage = new MimeMessage(mailSession);
+
+    InternetAddress fromAddress = null;
+    InternetAddress toAddress = null;
+    try {
+    fromAddress = new InternetAddress(from);
+    toAddress = new InternetAddress(to);
+    } catch (AddressException e) {
+    
+    e.printStackTrace();
+    }
+
+    try {
+    simpleMessage.setFrom(fromAddress);
+    simpleMessage.setRecipient(RecipientType.TO, toAddress);
+    simpleMessage.setSubject(subject);
+    simpleMessage.setText(text);
+
+    Transport.send(simpleMessage, simpleMessage.getAllRecipients());
+    //Transport.send(simpleMessage);
+    } catch (Exception e) {
+    
+    e.printStackTrace();
+    System.out.println(e.getLocalizedMessage());
+    }
+    }
+    
     /********E-mail notification*********/
      public void EmailProc(String recipient_v,String userid_v,String password_v,
         String name_v)
@@ -421,8 +508,9 @@ public class xxCactBankAMImpl extends OAApplicationModuleImpl {
             csmt.setString(4,name_v);
                 System.out.println("-------->tes8");
             csmt.execute();
-
-            }catch(SQLException e){ throw new OAException("Please Enter Email id..",OAException.ERROR);}
+             System.out.println("After csmt.execute()");
+            }
+            catch(SQLException e){ throw new OAException("Please Enter Email id..",OAException.ERROR);}
 
 
             }
@@ -448,6 +536,7 @@ public class xxCactBankAMImpl extends OAApplicationModuleImpl {
 
 
  public String dataSumAction(String s) 
+//  public String dataSumAction() 
     { OADBTransaction oadbtransaction = (OADBTransaction)getTransaction(); 
       OADBTransactionImpl oadbtransactionimpl = (OADBTransactionImpl)getTransaction();
 
@@ -549,5 +638,11 @@ public class xxCactBankAMImpl extends OAApplicationModuleImpl {
      */
     public xxcactTxnTestVO2Impl getxxcactTxnTestVO2() {
         return (xxcactTxnTestVO2Impl)findViewObject("xxcactTxnTestVO2");
+    }
+
+    /**Container's getter for xxCactBankCreateVO
+     */
+    public xxCactBankCreateVOImpl getxxCactBankCreateVO() {
+        return (xxCactBankCreateVOImpl)findViewObject("xxCactBankCreateVO");
     }
 }

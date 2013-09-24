@@ -25,8 +25,7 @@
       Type="java.lang.String"
       ColumnType="VARCHAR2"
       SQLType="VARCHAR"
-      TableName="XXCACT_BANK"
-      PrimaryKey="true" >
+      TableName="XXCACT_BANK" >
       <DesignTime>
          <Attr Name="_DisplaySize" Value="30" />
       </DesignTime>
@@ -240,14 +239,14 @@
          <Attr Name="_DisplaySize" Value="22" />
       </DesignTime>
    </Attribute>
-   <Key
-      Name="XxcactbankbankeoPrimaryKey" >
-      <AttrArray Name="Attributes">
-         <Item Value="xxfinalcactbank.oracle.apps.fnd.cactbank.schema.server.xxcactbankBankEO.UserId" />
-      </AttrArray>
-      <DesignTime>
-         <Attr Name="_isPrimary" Value="true" />
-         <Attr Name="_DBObjectName" Value="XXCACTBANKBANKEO_PRIMARY_KEY" />
-      </DesignTime>
-   </Key>
+   <Attribute
+      Name="RowID"
+      IsUpdateable="false"
+      ColumnName="ROWID"
+      Type="oracle.jbo.domain.RowID"
+      ColumnType="ROWID"
+      SQLType="ROWID"
+      TableName="XXCACT_BANK"
+      PrimaryKey="true" >
+   </Attribute>
 </Entity>
